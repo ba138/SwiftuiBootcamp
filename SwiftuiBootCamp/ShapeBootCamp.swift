@@ -9,7 +9,14 @@ import SwiftUI
 
 struct ShapeBootCamp: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+//        Circle()
+            //.fill(Color.blue)
+          //  .foregroundColor(Color.pink)
+           // .stroke()
+//            .stroke(Color.red,lineWidth: 30).frame(width: 300)
+//            .stroke(Color.red,style: StrokeStyle(lineWidth: 10,lineCap: .butt,dash: [5],),)
+//            .trim(from: 0.2,to: 1.0).stroke(Color.purple ,lineWidth: 10).frame(width: 300)
+        
     }
 }
 

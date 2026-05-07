@@ -9,7 +9,16 @@ import SwiftUI
 
 struct textbootcamp: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+//        Text("This swiftuibootcamp and adding text")
+//            .font(.body)
+//            // .fontWeight(.heavy)
+//            .bold()
+////            .underline()
+//            .underline(true,color: Color.red)
+////            .strikethrough()
+//            .strikethrough(true,color: Color.green)
+        //Custom font
+        Text("This is custom font").font(.system(size: 24,weight: .bold,design: .rounded))
     }
 }
 

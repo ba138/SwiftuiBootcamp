@@ -25,7 +25,9 @@ struct GridentsBootCamp: View {
 //            }
             .fill(
                 RadialGradient(gradient: Gradient(colors: [Color.red,Color.blue]), center: .center, startRadius: 5, endRadius: 500)
-            ).frame(width: 300,height: 200)
+            ).frame(width: 300,height: 200).overlay{
+                Text("This is redial gradient").foregroundColor(AppColors.textPrimary).bold()
+            }
 }
 }
 

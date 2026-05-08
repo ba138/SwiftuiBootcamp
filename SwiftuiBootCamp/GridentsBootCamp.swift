@@ -10,19 +10,23 @@ import SwiftUI
 struct GridentsBootCamp: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 25)
+//            .fill(
+//                LinearGradient(
+//                    colors: [AppColors.background, AppColors.button],
+//                    startPoint: .leading,
+//                    endPoint: .trailing
+//                )
+//            )
+//            .frame(width: 300, height: 200)
+//            .overlay {
+//                Text("Centered text")
+//                    .font(.headline)
+//                    .foregroundStyle(AppColors.textPrimary)
+//            }
             .fill(
-                LinearGradient(
-                    colors: [AppColors.background, AppColors.button],
-                    startPoint: .leading,
-                    endPoint: .trailing
-                )
-            )
-            .frame(width: 300, height: 200)
-            .overlay {
-                Text("Centered text")
-                    .font(.headline)
-                    .foregroundStyle(AppColors.textPrimary)
-            }   }
+                RadialGradient(gradient: Gradient(colors: [Color.red,Color.blue]), center: .center, startRadius: 5, endRadius: 500)
+            ).frame(width: 300,height: 200)
+}
 }
 
 #Preview {

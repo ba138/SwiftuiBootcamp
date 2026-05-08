@@ -23,11 +23,18 @@ struct GridentsBootCamp: View {
 //                    .font(.headline)
 //                    .foregroundStyle(AppColors.textPrimary)
 //            }
+//            .fill(
+//                RadialGradient(gradient: Gradient(colors: [Color.red,Color.blue]), center: .center, startRadius: 5, endRadius: 150)
+//            ).frame(width: 300,height: 200).overlay{
+//                Text("This is redial gradient").foregroundColor(AppColors.textPrimary).bold()
+//            }
             .fill(
-                RadialGradient(gradient: Gradient(colors: [Color.red,Color.blue]), center: .center, startRadius: 5, endRadius: 500)
-            ).frame(width: 300,height: 200).overlay{
-                Text("This is redial gradient").foregroundColor(AppColors.textPrimary).bold()
-            }
+                AngularGradient(
+                    gradient: Gradient(colors: [Color.red, Color.green]),
+                    center: .center,
+                    angle: .degrees(45)
+                )
+            ).frame(width: 300,height: 200)
 }
 }
 

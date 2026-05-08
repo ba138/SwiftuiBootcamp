@@ -11,9 +11,9 @@ struct ColorsBootCamp: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 25)
             .fill(AppColors.button)
-            .frame(width: 400,height: 200)
+            .frame(width: 300,height: 200)
 //            .shadow(radius: 10,)
-            .shadow(color: AppColors.primary, radius: 10,x: 0,y: 6)
+            .shadow(color:AppColors.textSecondary.opacity(0.5), radius: 10,x: -40,y: -20)
     }
 }
 

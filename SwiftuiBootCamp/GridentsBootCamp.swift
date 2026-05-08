@@ -12,12 +12,17 @@ struct GridentsBootCamp: View {
         RoundedRectangle(cornerRadius: 25)
             .fill(
                 LinearGradient(
-                    gradient: Gradient(colors: [AppColors.background, AppColors.button]),
+                    colors: [AppColors.background, AppColors.button],
                     startPoint: .leading,
                     endPoint: .trailing
                 )
             )
-            .frame(width: 300, height: 200)   }
+            .frame(width: 300, height: 200)
+            .overlay {
+                Text("Centered text")
+                    .font(.headline)
+                    .foregroundStyle(AppColors.textPrimary)
+            }   }
 }
 
 #Preview {

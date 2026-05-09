@@ -44,4 +44,5 @@ public enum AppColors {
     public static let background = Color(0xFFF2F2F7)
     public static let textPrimary = Color(0xFF111111)
     public static let textSecondary = Color(0xFF6D6D72)
+    public static let favorite = Color(0xFFFF4D6D)
 }

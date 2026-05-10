@@ -25,8 +25,8 @@ struct ImageBootCamp: View {
         //           )
         //Adding image to icon
         Image("remove")
-            .renderingMode(
-                .template)
+//            .renderingMode(
+//                .template)
             .resizable()
             .foregroundColor(
                 .green)

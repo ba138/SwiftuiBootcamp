@@ -24,12 +24,12 @@ struct ImageBootCamp: View {
         //               Ellipse()
         //           )
         //Adding image to icon
-        Image("google")
+        Image("remove")
             .renderingMode(
                 .template)
             .resizable()
             .foregroundColor(
-                .red)
+                .green)
             .scaledToFit()
             .frame(width: 200,height: 150)
     }

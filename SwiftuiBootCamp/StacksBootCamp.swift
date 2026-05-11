@@ -118,6 +118,32 @@ struct StacksBootCamp: View {
                                    width: 30,
                                    height: 30
                                )
+                VStack{
+                    RoundedRectangle(
+                                   cornerRadius: 8
+                               )
+                               .fill(.red)
+                                   .frame(
+                                       width: 50,
+                                       height: 50
+                                   )
+                               RoundedRectangle(
+                                   cornerRadius: 8
+                               )
+                               .fill(.blue)
+                                   .frame(
+                                       width: 40,
+                                       height: 40
+                                   )
+                               RoundedRectangle(
+                                   cornerRadius: 8
+                               )
+                               .fill(.green)
+                                   .frame(
+                                       width: 30,
+                                       height: 30
+                                   )
+                }
             }
         }
     }

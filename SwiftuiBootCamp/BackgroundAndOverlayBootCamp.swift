@@ -25,7 +25,18 @@ struct BackgroundAndOverlayBootCamp: View {
 //            )
 //        RoundedRectangle(cornerRadius: 24).fill(AppColors.button).frame(width: .infinity,height: 56).padding(.all).overlay(Text("Login").font(
 //            .system(size: 24,weight: .bold,design: .rounded)))
-        RoundedRectangle(cornerRadius: 24).frame(width: 300,height: 300).overlay(Image("google").resizable().frame(width: 180,height: 180,alignment: .center))
+        RoundedRectangle(cornerRadius: 24).frame(width: 300,height: 300).overlay(
+            Image("google")
+                .resizable()
+                .frame(
+                    width: 180,height: 180,alignment: .center
+                )
+        ).background(
+            RoundedRectangle(cornerRadius: 30)
+                .fill(Color.purple)
+                .frame(width: 350,height: 350)
+                
+        )
     }
 }
 

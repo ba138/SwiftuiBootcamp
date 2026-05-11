@@ -13,6 +13,7 @@ struct FrameBootCamp: View {
             .background(Color.red)
             .frame(width: 300,height: 300)
             .background(Color.green)
+            .frame(width: 500,height: 400,alignment: .center).background(AppColors.button)
     }
 }
 

@@ -91,32 +91,35 @@ struct StacksBootCamp: View {
 //                    height: 30
 //                )
 //        }
-        VStack(alignment: .center,spacing:12,content: {
-            RoundedRectangle(
-                           cornerRadius: 8
-                       )
-                       .fill(.red)
-                           .frame(
-                               width: 50,
-                               height: 50
+        ZStack{
+            RoundedRectangle(cornerRadius: 25).fill(.purple).frame(width: 350,height: 500)
+            HStack{
+                RoundedRectangle(
+                               cornerRadius: 8
                            )
-                       RoundedRectangle(
-                           cornerRadius: 8
-                       )
-                       .fill(.blue)
-                           .frame(
-                               width: 40,
-                               height: 40
+                           .fill(.red)
+                               .frame(
+                                   width: 50,
+                                   height: 50
+                               )
+                           RoundedRectangle(
+                               cornerRadius: 8
                            )
-                       RoundedRectangle(
-                           cornerRadius: 8
-                       )
-                       .fill(.green)
-                           .frame(
-                               width: 30,
-                               height: 30
+                           .fill(.blue)
+                               .frame(
+                                   width: 40,
+                                   height: 40
+                               )
+                           RoundedRectangle(
+                               cornerRadius: 8
                            )
-        })
+                           .fill(.green)
+                               .frame(
+                                   width: 30,
+                                   height: 30
+                               )
+            }
+        }
     }
 }
 

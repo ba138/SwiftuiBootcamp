@@ -23,8 +23,9 @@ struct BackgroundAndOverlayBootCamp: View {
 //                    LinearGradient(colors: [Color.blue,Color.green], startPoint:.leading, endPoint:.trailing)
 //                ).frame(width: 120,height: 120)
 //            )
-        RoundedRectangle(cornerRadius: 24).fill(AppColors.button).frame(width: .infinity,height: 56).padding(.all).overlay(Text("Login").font(
-            .system(size: 24,weight: .bold,design: .rounded)))
+//        RoundedRectangle(cornerRadius: 24).fill(AppColors.button).frame(width: .infinity,height: 56).padding(.all).overlay(Text("Login").font(
+//            .system(size: 24,weight: .bold,design: .rounded)))
+        RoundedRectangle(cornerRadius: 24).frame(width: 300,height: 300).overlay(Image("google").resizable().frame(width: 180,height: 180,alignment: .center))
     }
 }
 

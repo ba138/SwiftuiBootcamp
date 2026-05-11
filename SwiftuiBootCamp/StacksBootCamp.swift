@@ -12,85 +12,111 @@ struct StacksBootCamp: View {
         //Vstack -> Vertical
         //Hstack -> Horizantal
         //Zstack -> z Axis(back to front)
-        VStack{
+//        VStack{
+//            RoundedRectangle(
+//                cornerRadius: 8
+//            )
+//            .fill(.red)
+//                .frame(
+//                    width: 60,
+//                    height: 60
+//                )
+//            RoundedRectangle(
+//                cornerRadius: 8
+//            )
+//            .fill(.blue)
+//                .frame(
+//                    width: 60,
+//                    height: 60
+//                )
+//            RoundedRectangle(
+//                cornerRadius: 8
+//            )
+//            .fill(.green)
+//                .frame(
+//                    width: 60,
+//                    height: 60
+//                )
+//        }
+//        // Hstack for horizontal aligment
+//        HStack{
+//            RoundedRectangle(
+//                cornerRadius: 8
+//            )
+//            .fill(.red)
+//                .frame(
+//                    width: 60,
+//                    height: 60
+//                )
+//            RoundedRectangle(
+//                cornerRadius: 8
+//            )
+//            .fill(.blue)
+//                .frame(
+//                    width: 60,
+//                    height: 60
+//                )
+//            RoundedRectangle(
+//                cornerRadius: 8
+//            )
+//            .fill(.green)
+//                .frame(
+//                    width: 60,
+//                    height: 60
+//                )
+//        }
+//        ZStack{
+//            RoundedRectangle(
+//                cornerRadius: 8
+//            )
+//            .fill(.red)
+//                .frame(
+//                    width: 50,
+//                    height: 50
+//                )
+//            RoundedRectangle(
+//                cornerRadius: 8
+//            )
+//            .fill(.blue)
+//                .frame(
+//                    width: 40,
+//                    height: 40
+//                )
+//            RoundedRectangle(
+//                cornerRadius: 8
+//            )
+//            .fill(.green)
+//                .frame(
+//                    width: 30,
+//                    height: 30
+//                )
+//        }
+        VStack(alignment: .center,spacing:12,content: {
             RoundedRectangle(
-                cornerRadius: 8
-            )
-            .fill(.red)
-                .frame(
-                    width: 60,
-                    height: 60
-                )
-            RoundedRectangle(
-                cornerRadius: 8
-            )
-            .fill(.blue)
-                .frame(
-                    width: 60,
-                    height: 60
-                )
-            RoundedRectangle(
-                cornerRadius: 8
-            )
-            .fill(.green)
-                .frame(
-                    width: 60,
-                    height: 60
-                )
-        }
-        // Hstack for horizontal aligment
-        HStack{
-            RoundedRectangle(
-                cornerRadius: 8
-            )
-            .fill(.red)
-                .frame(
-                    width: 60,
-                    height: 60
-                )
-            RoundedRectangle(
-                cornerRadius: 8
-            )
-            .fill(.blue)
-                .frame(
-                    width: 60,
-                    height: 60
-                )
-            RoundedRectangle(
-                cornerRadius: 8
-            )
-            .fill(.green)
-                .frame(
-                    width: 60,
-                    height: 60
-                )
-        }
-        ZStack{
-            RoundedRectangle(
-                cornerRadius: 8
-            )
-            .fill(.red)
-                .frame(
-                    width: 50,
-                    height: 50
-                )
-            RoundedRectangle(
-                cornerRadius: 8
-            )
-            .fill(.blue)
-                .frame(
-                    width: 40,
-                    height: 40
-                )
-            RoundedRectangle(
-                cornerRadius: 8
-            )
-            .fill(.green)
-                .frame(
-                    width: 30,
-                    height: 30
-                )
-        }
+                           cornerRadius: 8
+                       )
+                       .fill(.red)
+                           .frame(
+                               width: 50,
+                               height: 50
+                           )
+                       RoundedRectangle(
+                           cornerRadius: 8
+                       )
+                       .fill(.blue)
+                           .frame(
+                               width: 40,
+                               height: 40
+                           )
+                       RoundedRectangle(
+                           cornerRadius: 8
+                       )
+                       .fill(.green)
+                           .frame(
+                               width: 30,
+                               height: 30
+                           )
+        })
     }
 }
 

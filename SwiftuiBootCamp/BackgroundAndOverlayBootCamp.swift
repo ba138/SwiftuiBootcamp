@@ -14,10 +14,14 @@ struct BackgroundAndOverlayBootCamp: View {
             .background(
 //            Color.red
 //            LinearGradient(colors: [AppColors.button,AppColors.favorite], startPoint: UnitPoint.leading, endPoint: UnitPoint.trailing)
-                Circle().fill(Color.green)
+                Circle().fill(
+                              LinearGradient(colors: [Color.red,Color.green], startPoint: UnitPoint.leading, endPoint: .trailing)
+                             )
         )
             .background(
-                Circle().fill(Color.red).frame(width: 120,height: 120)
+                Circle().fill(
+                    LinearGradient(colors: [Color.blue,Color.green], startPoint:.leading, endPoint:.trailing)
+                ).frame(width: 120,height: 120)
             )
     }
 }

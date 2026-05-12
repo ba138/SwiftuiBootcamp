@@ -22,10 +22,18 @@ struct PaddingAndSpacerBootCamp: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 
-                Text("This is the discription text of the padding which should be align to the leading and it should work because i use leading ")            }).padding(.all,8)
+                Text("This is the discription text of the padding which should be align to the leading and it should work because i use leading ")            })
+        .padding(.all,12)
 .background(
-                Color.blue
-            )
+                Color.white
+                    .cornerRadius(20)
+                    .shadow(
+                        color: Color.black.opacity(0.3), radius: 10,
+                        x: 0.0,y: 10
+                        
+                           )
+            )        .padding(.horizontal,10)
+
         
         
     }

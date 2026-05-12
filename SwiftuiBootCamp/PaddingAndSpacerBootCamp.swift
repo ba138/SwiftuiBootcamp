@@ -11,6 +11,7 @@ struct PaddingAndSpacerBootCamp: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             .padding(.all,30)
+            .padding(.leading,20)
             .foregroundColor(.white     )
             .font(.system(size: 30))
             .background(.red)

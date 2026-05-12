@@ -21,9 +21,11 @@ struct PaddingAndSpacerBootCamp: View {
             Text("This is Padding")
                 .font(.largeTitle)
                 .fontWeight(.bold)
+                .padding(.bottom,10)
                 
                 Text("This is the discription text of the padding which should be align to the leading and it should work because i use leading ")            })
         .padding(.all,12)
+        .padding(.vertical,10)
 .background(
                 Color.white
                     .cornerRadius(20)
@@ -33,7 +35,7 @@ struct PaddingAndSpacerBootCamp: View {
                         
                            )
             )        .padding(.horizontal,10)
-
+        
         
         
     }

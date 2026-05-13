@@ -11,21 +11,32 @@ struct InitizerandEnumsBootCamp: View {
     var backgroundColor: Color
     let count: Int
     let title: String
-    init( count: Int, title: String) {
+    init( count: Int, fruits: Fruits) {
         self.count = count
-        self.title = title
-        if title == "Apples" {
+//        self.title = title
+//        if title == "Apples" {
+//            self.backgroundColor = .red
+//        }else {
+//            self.backgroundColor = .green
+//        }
+        if fruits == .apple{
+            self.title = "Apples"
             self.backgroundColor = .red
-        }else {
-            self.backgroundColor = .green
+        }else{
+            self.title = "Orange"
+            self.backgroundColor = .orange
         }
+    }
+    enum Fruits {
+        case apple
+        case orange
     }
     var body: some View {
         VStack{
             Text("\(count)")
             Text(title)
         }
-        .frame(width: 200,height: 200)
+        .frame(width: 150,height: 150)
         .background(backgroundColor)
         .cornerRadius(20)
         .font(.system(size: 30,))
@@ -34,8 +45,14 @@ struct InitizerandEnumsBootCamp: View {
 }
 
 #Preview {
-    InitizerandEnumsBootCamp(
-        count: 54,
-        title: "Apples"
-    )
+    HStack{
+        InitizerandEnumsBootCamp(
+            count: 54,
+            fruits:.orange
+        )
+        InitizerandEnumsBootCamp(
+            count: 54,
+            fruits:.apple
+        )
+    }.padding(.horizontal,16)
 }

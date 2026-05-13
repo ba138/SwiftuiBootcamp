@@ -11,6 +11,9 @@ struct SpacersBootCamp: View {
     var body: some View {
 
         HStack{
+            Spacer()
+                .frame(height: 10)
+                .background(.pink)
             Rectangle()
                 .frame(width: 100,height: 100)
             Spacer()
@@ -19,9 +22,19 @@ struct SpacersBootCamp: View {
             Rectangle()
                 .fill(.red)
                 .frame(width: 100,height: 100)
+            Spacer()
+                .frame(height: 10)
+                .background(.pink)
+            Rectangle()
+                .fill(.green)
+                .frame(width: 100,height: 100)
+
         }
-        .background(.blue)
-    }
+        .padding(.horizontal,100)
+
+            }
+//        .background(.blue)
+    
 }
 
 #Preview {

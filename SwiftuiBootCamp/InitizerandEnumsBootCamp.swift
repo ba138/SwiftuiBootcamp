@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct InitizerandEnumsBootCamp: View {
-    let backgroundColor: Color = Color.red
+    let backgroundColor: Color
+    let count: Int = 5
     var body: some View {
         VStack{
-            Text("5")
+            Text("\(count)")
             Text("Apples")
         }
         .frame(width: 200,height: 200)
@@ -23,5 +24,5 @@ struct InitizerandEnumsBootCamp: View {
 }
 
 #Preview {
-    InitizerandEnumsBootCamp()
+    InitizerandEnumsBootCamp(backgroundColor: .blue)
 }

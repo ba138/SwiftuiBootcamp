@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct InitizerandEnumsBootCamp: View {
-    let backgroundColor: Color
+    var backgroundColor: Color
     let count: Int
     let title: String
+    init(backgroundColor: Color, count: Int, title: String) {
+        self.backgroundColor = backgroundColor
+        self.count = count
+        self.title = title
+        if title == "Apples" {
+            self.backgroundColor = .red
+        }else {
+            self.backgroundColor = .green
+        }
+    }
     var body: some View {
         VStack{
             Text("\(count)")

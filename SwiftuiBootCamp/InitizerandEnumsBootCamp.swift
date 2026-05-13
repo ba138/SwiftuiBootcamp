@@ -11,8 +11,7 @@ struct InitizerandEnumsBootCamp: View {
     var backgroundColor: Color
     let count: Int
     let title: String
-    init(backgroundColor: Color, count: Int, title: String) {
-        self.backgroundColor = backgroundColor
+    init( count: Int, title: String) {
         self.count = count
         self.title = title
         if title == "Apples" {
@@ -36,7 +35,6 @@ struct InitizerandEnumsBootCamp: View {
 
 #Preview {
     InitizerandEnumsBootCamp(
-        backgroundColor: .blue,
         count: 54,
         title: "Apples"
     )

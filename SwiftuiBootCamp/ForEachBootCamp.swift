@@ -11,7 +11,10 @@ struct ForEachBootCamp: View {
     var body: some View {
         VStack{
             ForEach(0..<10, content: {index in
-            Text("\(index)")
+//            Text("\(index)")
+                Circle()
+                    .fill(.red)
+                    .frame(width: 50)
             })
         }
     }

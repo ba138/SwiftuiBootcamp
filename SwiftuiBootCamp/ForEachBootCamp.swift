@@ -12,9 +12,13 @@ struct ForEachBootCamp: View {
         VStack{
             ForEach(0..<10, content: {index in
 //            Text("\(index)")
-                Circle()
-                    .fill(.red)
-                    .frame(width: 50)
+                HStack{
+                    Circle()
+                        .fill(.red)
+                        .frame(width: 50)
+                    
+                    Text("Index : \(index)").font(.system(size: 24))
+                }
             })
         }
     }

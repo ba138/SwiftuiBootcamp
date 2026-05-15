@@ -79,8 +79,8 @@ struct ScrollViewBootCamp: View {
                         LazyHStack{
                         ForEach(0..<30) { index in
                             RoundedRectangle(cornerRadius: 25)
-                                .fill(.white)
-                                .frame(width: 200,height: 200)
+                                .fill(colors[index])
+                                .frame(width: 100,height: 100)
                                 .shadow(radius: 10).padding()
                         }
 

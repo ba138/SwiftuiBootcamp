@@ -63,15 +63,34 @@ struct ScrollViewBootCamp: View {
     ]
     var body: some View {
      
-            ScrollView(.vertical,showsIndicators: false,content: {
-                VStack{
-                    ForEach(0..<50) { index in
-                        RoundedRectangle(cornerRadius: 25)
-                        .fill(colors[index])
-                        .frame(width: 300,height: 300)
+//            ScrollView(.vertical,showsIndicators: false,content: {
+//                VStack{
+//                    ForEach(0..<50) { index in
+//                        RoundedRectangle(cornerRadius: 25)
+//                        .fill(colors[index])
+//                        .frame(width: 300,height: 300)
+//                    }
+//                }
+//            })
+        ScrollView{
+            VStack{
+                ForEach(0..<10) { index in
+                    ScrollView(.horizontal,showsIndicators: false) {HStack{
+                        ForEach(0..<30) { index in
+                            RoundedRectangle(cornerRadius: 25)
+                                .fill(.white)
+                                .frame(width: 200,height: 200)
+                                .shadow(radius: 10).padding()
+                        }
+
+                       
                     }
+                                                
+                    }
+                    
                 }
-            })
+            }
+        }
             
         
     }

@@ -62,21 +62,19 @@ struct ScrollViewBootCamp: View {
         Color(hex: "#E9F7EF")
     ]
     var body: some View {
-        VStack{
-            ScrollView{
-                ForEach(0..<50) { index in
-                    RoundedRectangle(
-                        cornerRadius: 24
-                    )
-                    .fill(colors[index])
-                    .frame(
-                        width: 300,
-                        height: 300
-                    )                }
-               
-            }
-           
-        }    }
+     
+            ScrollView(.vertical,showsIndicators: false,content: {
+                VStack{
+                    ForEach(0..<50) { index in
+                        RoundedRectangle(cornerRadius: 25)
+                        .fill(colors[index])
+                        .frame(width: 300,height: 300)
+                    }
+                }
+            })
+            
+        
+    }
 }
 
 #Preview {

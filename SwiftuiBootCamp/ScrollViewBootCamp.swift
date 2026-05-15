@@ -73,9 +73,10 @@ struct ScrollViewBootCamp: View {
 //                }
 //            })
         ScrollView{
-            VStack{
+            LazyVStack{
                 ForEach(0..<10) { index in
-                    ScrollView(.horizontal,showsIndicators: false) {HStack{
+                    ScrollView(.horizontal,showsIndicators: false) {
+                        LazyHStack{
                         ForEach(0..<30) { index in
                             RoundedRectangle(cornerRadius: 25)
                                 .fill(.white)

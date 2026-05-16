@@ -68,20 +68,42 @@ struct GridsBootCamp: View {
       
     ]
     var body: some View {
-        ScrollView{
-            LazyVGrid(columns:columns,alignment: .center) {
-                ForEach(0..<30) { index in
-                    Rectangle()
-                        .fill(colors[index])
-                        .frame(height: 200)
-                        .cornerRadius(12)
-                        .shadow(color:.white,radius: 10)
-                    
+//        ScrollView{
+//            LazyVGrid(columns:columns,alignment: .center) {
+//                ForEach(0..<30) { index in
+//                    Rectangle()
+//                        .fill(colors[index])
+//                        .frame(height: 200)
+//                        .cornerRadius(12)
+//                        .shadow(color:.white,radius: 10)
+//                    
+//                }
+//                
+//            }
+//
+//        }
+        ScrollView {
+            LazyVGrid(columns: columns,
+                      alignment: .center,
+                      spacing: nil,
+                      pinnedViews: [],
+                      
+                      
+            ) {
+                Section {
+                    Text("Section2")
                 }
-                
+                ForEach(0..<30) { index in
+                   
+                                        Rectangle()
+                                            .fill(colors[index])
+                                            .frame(height: 200)
+                                            .cornerRadius(12)
+                                            .shadow(color:.white,radius: 10)
+                }
             }
-
-        }    }
+        }
+    }
 }
 
 #Preview {

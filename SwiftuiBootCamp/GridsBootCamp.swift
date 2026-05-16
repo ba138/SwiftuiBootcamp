@@ -91,8 +91,29 @@ struct GridsBootCamp: View {
                       
             ) {
                 Section {
-                    Text("Section2")
+                    Text("Section1")
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .frame(maxWidth: .infinity,alignment: .leading)
+                        .background(.green)
+                        
+                }.padding(.vertical,10)
+                ForEach(0..<30) { index in
+                   
+                                        Rectangle()
+                                            .fill(colors[index])
+                                            .frame(height: 200)
+                                            .cornerRadius(12)
+                                            .shadow(color:.white,radius: 10)
                 }
+                Section {
+                    Text("Section2")
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .frame(maxWidth: .infinity,alignment: .leading)
+                        .background(.red)
+                        
+                }.padding(.vertical,10)
                 ForEach(0..<30) { index in
                    
                                         Rectangle()

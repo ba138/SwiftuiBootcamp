@@ -86,44 +86,56 @@ struct GridsBootCamp: View {
             LazyVGrid(columns: columns,
                       alignment: .center,
                       spacing: nil,
-                      pinnedViews: [],
+                      pinnedViews: [.sectionHeaders],
                       
                       
             ) {
-                Section {
-                    Text("Section1")
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .frame(maxWidth: .infinity,alignment: .leading)
-                        .background(.green)
-                        
-                }.padding(.vertical,10)
-                ForEach(0..<30) { index in
-                   
-                                        Rectangle()
-                                            .fill(colors[index])
-                                            .frame(height: 200)
-                                            .cornerRadius(12)
-                                            .shadow(color:.white,radius: 10)
+                Section(
+                    header: SectionHeader(
+                        title: "Section 1",
+                        color: .green))
+                {
+                    ForEach(0..<30) { index in
+                       
+                                            Rectangle()
+                                                .fill(colors[index])
+                                                .frame(height: 200)
+                                                .cornerRadius(12)
+                                                .shadow(color:.white,radius: 10)
+                    }
+
                 }
-                Section {
-                    Text("Section2")
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .frame(maxWidth: .infinity,alignment: .leading)
-                        .background(.red)
-                        
-                }.padding(.vertical,10)
-                ForEach(0..<30) { index in
-                   
-                                        Rectangle()
-                                            .fill(colors[index])
-                                            .frame(height: 200)
-                                            .cornerRadius(12)
-                                            .shadow(color:.white,radius: 10)
+                Section(
+                    header: SectionHeader(
+                        title: "Section 2",
+                        color: .red)
+                ) {
+                    ForEach(0..<30) { index in
+                       
+                                            Rectangle()
+                                                .fill(colors[index])
+                                                .frame(height: 200)
+                                                .cornerRadius(12)
+                                                .shadow(color:.white,radius: 10)
+                    }
+
                 }
             }
         }
+    }
+}
+
+private struct SectionHeader: View {
+    let title: String
+    let color: Color
+    var body: some View {
+        Text(title)
+            .foregroundStyle(.white)
+            .font(.title.bold())
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.vertical, 8)
+            .padding(.horizontal)
+            .background(color)
     }
 }
 

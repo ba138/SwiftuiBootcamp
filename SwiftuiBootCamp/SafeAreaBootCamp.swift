@@ -9,12 +9,15 @@ import SwiftUI
 
 struct SafeAreaBootCamp: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .frame(maxWidth: .infinity,maxHeight: .infinity)
-            .background(.red)
-            .edgesIgnoringSafeArea(Edge.Set.top
-            
-            )
+        ZStack {
+            VStack {
+                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                Spacer()
+            }                .frame(maxWidth: .infinity,maxHeight: .infinity)
+                .background(.red)
+                .edgesIgnoringSafeArea(.top)
+        }
+
     }
 }
 

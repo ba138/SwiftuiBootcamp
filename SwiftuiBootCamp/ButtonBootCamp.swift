@@ -15,6 +15,15 @@ struct ButtonBootCamp: View {
             Button("Press"){
                 self.title = "Button was pressed"
             }
+            Button {
+                self.title="Login Button Is Pressed"
+            } label: {
+                HStack{
+                    Text("Login").font(.system(size: 24,weight: .bold))
+                    Image(systemName: "arrow.right").fontWeight(.bold)
+                }
+            }
+
         }
     }
 }

@@ -11,8 +11,7 @@ struct SafeAreaBootCamp: View {
     var body: some View {
 //        ZStack {
 //            //Background
-//            Color.green.edgesIgnoringSafeArea(.
-//            all)
+//            Color.green.ignoresSafeArea()
 //            //Foreground
 //            VStack {
 //                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
@@ -24,7 +23,7 @@ struct SafeAreaBootCamp: View {
         ScrollView{
             VStack{
                 Text(" scrollview")
-                    .font(.largeTitle,)
+                    .font(.largeTitle)
                     .frame(maxWidth: .infinity,alignment: .leading)
                 ForEach(0..<20) { index in
                     RoundedRectangle(cornerRadius: 25)
@@ -34,11 +33,12 @@ struct SafeAreaBootCamp: View {
                         .padding(20)
                 }
             }
-        }.edgesIgnoringSafeArea(.all).background(.red)
-
-    }
+        }
+        .background(Color.blue,ignoresSafeAreaEdges: .bottom)
+            }
 }
 
 #Preview {
     SafeAreaBootCamp()
 }
+

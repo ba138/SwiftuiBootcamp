@@ -34,7 +34,7 @@ struct SafeAreaBootCamp: View {
                 }
             }
         }
-        .background(Color.blue,ignoresSafeAreaEdges: .bottom)
+        .background(Color.blue.ignoresSafeArea())
             }
 }
 

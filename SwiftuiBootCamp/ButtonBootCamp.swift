@@ -15,6 +15,7 @@ struct ButtonBootCamp: View {
             Button("Press"){
                 self.title = "Button was pressed"
             }
+            .accentColor(.red)
             Button {
                 self.title="Login Button Is Pressed"
             } label: {
@@ -22,6 +23,15 @@ struct ButtonBootCamp: View {
                     Text("Login").font(.system(size: 24,weight: .bold))
                     Image(systemName: "arrow.right").fontWeight(.bold)
                 }
+                .foregroundColor(.white)
+                
+                .padding()
+                .padding(.horizontal,100)
+                    .background(
+                       Color .green
+                        .cornerRadius(12)
+                        .shadow(radius: 10,x: 0,y: 10)
+                    )
             }
 
         }

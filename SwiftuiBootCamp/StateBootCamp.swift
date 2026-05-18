@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct StateBootCamp: View {
+    @State var backgroundColor: Color = .red;
+    @State var title: String = "Title of the Layer";
+    @State var count: Int = 0;
     var body: some View {
         ZStack{
             // background
-            Color.red
+           backgroundColor
                 .edgesIgnoringSafeArea(.all)
                 // content layer
             VStack(spacing: 20,) {
-                Text("Title of the layer")
+                Text(title)
                     .font(
                         .system(
                             size: 30,
@@ -25,7 +28,7 @@ struct StateBootCamp: View {
                     .foregroundColor(
                         .white
                     )
-                Text("Count : 1")
+                Text("Count : \(count)")
                     .font(
                         .system(
                             size: 30,
@@ -37,7 +40,9 @@ struct StateBootCamp: View {
                     )
                 HStack(spacing:20) {
                     Button {
-                        
+                        backgroundColor = .green;
+                        title = "Button 1 is Pressed";
+                        count += 1
                     } label: {
                         Text("Button 1")
                             .foregroundColor(.black)
@@ -49,7 +54,10 @@ struct StateBootCamp: View {
                             .cornerRadius(10)
                     }
                     Button {
-                        
+                        backgroundColor = .purple;
+                        title = "Button 2 is Pressed";
+                        count -= 1
+
                     } label: {
                         Text("Button 2")
                             .foregroundColor(.black)
@@ -71,3 +79,4 @@ struct StateBootCamp: View {
 #Preview {
     StateBootCamp()
 }
+

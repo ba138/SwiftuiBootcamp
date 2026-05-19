@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExteractedFunctionsBootCamp: View {
+    @State var bgColor:Color = Color.pink
     var body: some View {
         ZStack{
             //background
@@ -26,6 +27,9 @@ struct ExteractedFunctionsBootCamp: View {
                 }
             }
         }
+    }
+    func buttonPressed(){
+        
     }
 }
 

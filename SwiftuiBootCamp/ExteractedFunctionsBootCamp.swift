@@ -16,18 +16,22 @@ struct ExteractedFunctionsBootCamp: View {
 bgColor
                 .ignoresSafeArea()
                 //content
-            VStack{
-                Text("Title")
-                    .font(.largeTitle)
-                Button(action: {
-                    buttonPressed()
-                    
-                }) {
-                    Text("Pressme").font(.subheadline).foregroundColor(.white)
-                        .padding()
-                        .background(.black)
-                        .cornerRadius(12)
-                }
+            contentLayer
+            
+        }
+    }
+    var contentLayer : some View{
+        VStack{
+            Text("Title")
+                .font(.largeTitle)
+            Button(action: {
+                buttonPressed()
+                
+            }) {
+                Text("Pressme").font(.subheadline).foregroundColor(.white)
+                    .padding()
+                    .background(.black)
+                    .cornerRadius(12)
             }
         }
     }

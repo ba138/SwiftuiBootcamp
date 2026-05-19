@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct ExteractedFunctionsBootCamp: View {
-    @State var bgColor:Color = Color.pink
+    @State var bgColor:Color = Color.yellow
+    
     var body: some View {
         ZStack{
             //background
-            Color.yellow.ignoresSafeArea()
+bgColor
+                .ignoresSafeArea()
                 //content
             VStack{
                 Text("Title")
                     .font(.largeTitle)
                 Button(action: {
+                    buttonPressed()
                     
                 }) {
                     Text("Pressme").font(.subheadline).foregroundColor(.white)
@@ -29,7 +32,7 @@ struct ExteractedFunctionsBootCamp: View {
         }
     }
     func buttonPressed(){
-        
+        bgColor = Color.pink
     }
 }
 

@@ -12,10 +12,14 @@ struct EtractSubviewsBootCamp: View {
         ZStack{
             Color.cyan
                 .edgesIgnoringSafeArea(.all)
-            myItems
+            MyItems()
+            
         }
     }
-    var myItems : some View {
+    
+}
+struct MyItems : View {
+    var body: some View {
         VStack{
             Text("1")
             Text("Apple")
@@ -24,7 +28,6 @@ struct EtractSubviewsBootCamp: View {
         .background(
         ).cornerRadius(10)
     }
-    
 }
 
 #Preview {

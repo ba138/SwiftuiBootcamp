@@ -12,12 +12,15 @@ struct EtractSubviewsBootCamp: View {
         ZStack{
             Color.cyan
                 .edgesIgnoringSafeArea(.all)
-            HStack{
-                MyItems(title: "Apple", count: 1, color: .red)
-                MyItems(title: "Oranges", count: 2, color: .orange)
-                MyItems(title: "Bananas", count: 3, color: .yellow)
+            content
+        }
+    }
+    var content : some View {
+        HStack{
+            MyItems(title: "Apple", count: 1, color: .red)
+            MyItems(title: "Oranges", count: 2, color: .orange)
+            MyItems(title: "Bananas", count: 3, color: .yellow)
 
-            }
         }
     }
     

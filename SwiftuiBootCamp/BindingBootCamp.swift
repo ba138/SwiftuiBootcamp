@@ -13,25 +13,31 @@ struct BindingBootCamp: View {
         ZStack{
             bgColor
                 .ignoresSafeArea()
-            VStack{
-                Button {
-                    
-                } label: {
-                    Text("Button")
-                        .foregroundColor(.white)
-                        .padding()
-                        .padding(.horizontal)
-                        .background(
-                            .blue
-                        )
-                        .cornerRadius(10)
-                }
-
-            }
+            ButtonView(bgColor: $bgColor)
         }
     }
 }
+struct ButtonView : View {
+    @Binding var bgColor : Color
+    var body: some View {
+        VStack{
+            Button {
+                bgColor = .yellow
+            } label: {
+                Text("Button")
+                    .foregroundColor(.white)
+                    .padding()
+                    .padding(.horizontal)
+                    .background(
+                        .blue
+                    )
+                    .cornerRadius(10)
+            }
 
+        }
+
+    }
+}
 #Preview {
     BindingBootCamp()
 }

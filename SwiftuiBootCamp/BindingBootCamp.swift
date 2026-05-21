@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct BindingBootCamp: View {
+    @State var bgColor : Color = Color.green
     var body: some View {
         ZStack{
-            Color.red
+            bgColor
                 .ignoresSafeArea()
             VStack{
                 Button {

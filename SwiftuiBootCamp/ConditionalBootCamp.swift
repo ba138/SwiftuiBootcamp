@@ -38,12 +38,14 @@ struct ConditionalBootCamp: View {
                 .fill(.brown)
                 .padding(.all,40)
 
-            }else if shoeRectangle{
+            }
+            if shoeRectangle{
                 Rectangle()
                     .fill(.gray)
                     .frame(width: 200,height: 200)
                     .padding(.all,40)
-            }else{
+            }
+            if isShow && shoeRectangle{
                 RoundedRectangle(cornerRadius: 20)
                     .frame(width: 200,height: 300)
             }

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ConditionalBootCamp: View {
-    @State var isShow: Bool = true;
+    @State var isShow: Bool = false;
+    @State var shoeRectangle : Bool = false;
     var body: some View {
         VStack(spacing:20){
             Button {
@@ -20,6 +21,16 @@ struct ConditionalBootCamp: View {
                     .background(Color.red)
                     .cornerRadius(6)
             }
+            Button {
+                shoeRectangle.toggle()
+            } label: {
+                Text("Rectangle : \(shoeRectangle.description)")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.red)
+                    .cornerRadius(6)
+            }
+
             if isShow{
                 Circle(
                     
@@ -27,11 +38,14 @@ struct ConditionalBootCamp: View {
                 .fill(.brown)
                 .padding(.all,40)
 
-            }else{
+            }else if shoeRectangle{
                 Rectangle()
                     .fill(.gray)
                     .frame(width: 200,height: 200)
                     .padding(.all,40)
+            }else{
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 200,height: 300)
             }
             Spacer()
             

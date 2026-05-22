@@ -20,14 +20,20 @@ struct ConditionalBootCamp: View {
                     .background(Color.red)
                     .cornerRadius(6)
             }
-            if isShow == true{
+            if isShow{
                 Circle(
                     
                 )
                 .fill(.brown)
-                .padding(.all,20)
+                .padding(.all,40)
 
+            }else{
+                Rectangle()
+                    .fill(.gray)
+                    .frame(width: 200,height: 200)
+                    .padding(.all,40)
             }
+            Spacer()
             
         }
     }

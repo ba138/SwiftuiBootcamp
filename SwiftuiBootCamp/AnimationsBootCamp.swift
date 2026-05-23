@@ -12,6 +12,9 @@ struct AnimationsBootCamp: View {
     var body: some View {
         VStack{
             Button {
+                withAnimation (.default){
+                    isAnimated.toggle()
+                }
                 
             } label: {
                 Text("Button")
@@ -19,10 +22,10 @@ struct AnimationsBootCamp: View {
 
             
             RoundedRectangle(cornerRadius: 25)
-                .fill(.green)
+                .fill(isAnimated ? .green : .red)
                 .frame(
-                    width: 100,
-                    height: 100
+                    width: 300,
+                    height: 300
                 )
         }
     }

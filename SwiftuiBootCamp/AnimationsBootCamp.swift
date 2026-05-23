@@ -26,7 +26,9 @@ struct AnimationsBootCamp: View {
                     width:isAnimated ? 100: 300,
                     height:isAnimated ? 100 : 300
                         
-                ).offset(y :isAnimated ? 20 : 300)
+                )
+                .rotationEffect(Angle(degrees: isAnimated ? 360 : 0))
+                .offset(y :isAnimated ? 20 : 300)
             Spacer()
         }
     }

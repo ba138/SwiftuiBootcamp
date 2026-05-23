@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AnimationsBootCamp: View {
+    @State var isAnimated : Bool = false
     var body: some View {
         VStack{
             Button {

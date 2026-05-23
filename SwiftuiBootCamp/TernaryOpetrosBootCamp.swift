@@ -15,6 +15,8 @@ struct TernaryOpetrosBootCamp: View {
             Button("Button : \(isStart.description)"){
                 isStart.toggle();
             }
+            
+            Text(isStart ? "Starting" : "Stop")
             RoundedRectangle(cornerRadius: isStart ? 25 :12)
         .fill(isStart ? .red : .green)
         .frame(width:isStart ? 200 : 300,

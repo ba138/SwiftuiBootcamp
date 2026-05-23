@@ -12,7 +12,7 @@ struct AnimationsBootCamp: View {
     var body: some View {
         VStack{
             Button {
-                withAnimation (.default){
+                withAnimation (Animation.default.delay(2.0)){
                     isAnimated.toggle()
                 }
                 

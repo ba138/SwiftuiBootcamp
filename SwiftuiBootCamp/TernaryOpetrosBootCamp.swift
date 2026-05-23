@@ -10,14 +10,15 @@ import SwiftUI
 struct TernaryOpetrosBootCamp: View {
     @State var isStart : Bool = false
     var body: some View {
-VStack{
-          
-    Button("Button : \(isStart.description)"){
-        isStart.toggle();
-    }
-    RoundedRectangle(cornerRadius: 25)
+        VStack{
+            
+            Button("Button : \(isStart.description)"){
+                isStart.toggle();
+            }
+            RoundedRectangle(cornerRadius: isStart ? 25 :12)
         .fill(isStart ? .red : .green)
-        .frame(width: 200,height: 100)
+        .frame(width:isStart ? 200 : 300,
+               height: isStart ? 200 :300)
         }
         Spacer()
     }

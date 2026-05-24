@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AnimationCurvesBootCamp: View {
     @State var isAnimated : Bool = false
+    let time : Double = 10.0
     var body: some View {
         VStack{
             Button("Button"){
@@ -17,22 +18,22 @@ struct AnimationCurvesBootCamp: View {
             RoundedRectangle(cornerRadius: 20)
                 .frame(width:isAnimated ? 350 : 50, height: 100)
                 .animation(
-                    Animation.linear
+                    Animation.linear(duration: time)
                 )
             RoundedRectangle(cornerRadius: 20)
                 .frame(width:isAnimated ? 350 : 50, height: 100)
                 .animation(
-                    Animation.easeIn
+                    Animation.easeIn(duration: time)
                 )
             RoundedRectangle(cornerRadius: 20)
                 .frame(width:isAnimated ? 350 : 50, height: 100)
                 .animation(
-                    Animation.easeInOut
+                    Animation.easeInOut(duration: time)
                 )
             RoundedRectangle(cornerRadius: 20)
                 .frame(width:isAnimated ? 350 : 50, height: 100)
                 .animation(
-                    Animation.easeOut
+                    Animation.easeOut(duration: time)
                 )
         }
     }

@@ -17,24 +17,25 @@ struct AnimationCurvesBootCamp: View {
             }
             RoundedRectangle(cornerRadius: 20)
                 .frame(width:isAnimated ? 350 : 50, height: 100)
-                .animation(
-                    Animation.linear(duration: time)
-                )
-            RoundedRectangle(cornerRadius: 20)
-                .frame(width:isAnimated ? 350 : 50, height: 100)
-                .animation(
-                    Animation.easeIn(duration: time)
-                )
-            RoundedRectangle(cornerRadius: 20)
-                .frame(width:isAnimated ? 350 : 50, height: 100)
-                .animation(
-                    Animation.easeInOut(duration: time)
-                )
-            RoundedRectangle(cornerRadius: 20)
-                .frame(width:isAnimated ? 350 : 50, height: 100)
-                .animation(
-                    Animation.easeOut(duration: time)
-                )
+                .animation(Animation.spring())
+//                .animation(
+//                    Animation.linear(duration: time)
+//                )
+//            RoundedRectangle(cornerRadius: 20)
+//                .frame(width:isAnimated ? 350 : 50, height: 100)
+//                .animation(
+//                    Animation.easeIn(duration: time)
+//                )
+//            RoundedRectangle(cornerRadius: 20)
+//                .frame(width:isAnimated ? 350 : 50, height: 100)
+//                .animation(
+//                    Animation.easeInOut(duration: time)
+//                )
+//            RoundedRectangle(cornerRadius: 20)
+//                .frame(width:isAnimated ? 350 : 50, height: 100)
+//                .animation(
+//                    Animation.easeOut(duration: time)
+//                )
         }
     }
 }

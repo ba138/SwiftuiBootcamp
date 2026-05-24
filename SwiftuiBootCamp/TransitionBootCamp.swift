@@ -8,24 +8,29 @@
 import SwiftUI
 
 struct TransitionBootCamp: View {
+    @State var isShow : Bool = false
     var body: some View {
-        ZStack{
+        ZStack(alignment : .bottom){
             VStack{
                 Button {
-                    
+                    isShow.toggle()
                 } label: {
                     Text("Button")
                 }
                 Spacer()
 
             }
-            GeometryReader { geo in
+            if isShow {
                 RoundedRectangle(cornerRadius: 20)
-                    .frame(height: geo.size.height * 0.5)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    .frame(height: UIScreen.main.bounds.height * 0.5)
+                   
+                    .ignoresSafeArea()
+                    .transition(.slide)
+                    .animation(.easeInOut)
             }
-        }
+        }.ignoresSafeArea()
     }
+    
 }
 
 #Preview {

@@ -25,7 +25,7 @@ struct TransitionBootCamp: View {
                     .frame(height: UIScreen.main.bounds.height * 0.5)
                    
                     .ignoresSafeArea()
-                    .transition(.slide)
+                    .transition(.move(edge: .bottom))
                     .animation(.easeInOut)
             }
         }.ignoresSafeArea()

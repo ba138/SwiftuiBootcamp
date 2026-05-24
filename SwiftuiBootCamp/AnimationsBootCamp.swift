@@ -30,7 +30,6 @@ struct AnimationsBootCamp: View {
                 .animation(
                     .default
                         .repeatForever( autoreverses: true),
-                    value: isAnimated
                 )
             Spacer()
         }

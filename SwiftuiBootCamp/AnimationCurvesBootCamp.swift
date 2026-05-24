@@ -17,7 +17,22 @@ struct AnimationCurvesBootCamp: View {
             RoundedRectangle(cornerRadius: 20)
                 .frame(width:isAnimated ? 350 : 50, height: 100)
                 .animation(
-                    Animation.default
+                    Animation.linear
+                )
+            RoundedRectangle(cornerRadius: 20)
+                .frame(width:isAnimated ? 350 : 50, height: 100)
+                .animation(
+                    Animation.easeIn
+                )
+            RoundedRectangle(cornerRadius: 20)
+                .frame(width:isAnimated ? 350 : 50, height: 100)
+                .animation(
+                    Animation.easeInOut
+                )
+            RoundedRectangle(cornerRadius: 20)
+                .frame(width:isAnimated ? 350 : 50, height: 100)
+                .animation(
+                    Animation.easeOut
                 )
         }
     }

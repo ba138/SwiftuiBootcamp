@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SheetsBootCamp: View {
-    @State var showSheet : Bool = false
-    @State var count : Int = 0 ;
+    @State var showSheet: Bool = false
+    @State var count: Int = 0
     var body: some View {
         ZStack{
             Color.green
@@ -41,32 +41,38 @@ struct SheetsBootCamp: View {
     }
 }
 struct SheetView : View {
-    @Environment(\.presentationMode) var presentationMode;
-    @Binding var count : Int  ;
+    @Environment(\.dismiss) var dismiss
+    @Binding var count: Int
     var body: some View {
-        VStack(alignment: .leading){
-            Button {
-                presentationMode.wrappedValue.dismiss()
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.largeTitle)
+        VStack {
+            HStack {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "xmark")
+                        .font(.largeTitle)
+                }
+                Spacer()
             }
+            .padding([.top, .leading])
+
             Spacer()
 
-            VStack(alignment: .trailing){
+            HStack{
+                
                 Text("\(count)")
 
             }
             Spacer()
             HStack(alignment:.center){
                 Button {
-                    count += 1;
+                    count += 1
                 } label: {
                     Text("Increment")
                 }
                 Button {
-                    if(count >= 1){
-                        count -= 1;
+                    if count >= 1 {
+                        count -= 1
 
                     }
                 } label: {

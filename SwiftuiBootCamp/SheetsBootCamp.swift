@@ -42,11 +42,24 @@ struct SheetsBootCamp: View {
     }
 }
 struct SheetView : View {
+    @Environment(\.presentationMode) var presentationMode;
     @Binding var count : Int  ;
     var body: some View {
-        VStack{
-            Text("\(count)")
-            HStack{
+        VStack(alignment: .leading){
+            Button {
+                
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.largeTitle)
+            }
+            Spacer()
+
+            VStack(alignment: .trailing){
+                Text("\(count)")
+
+            }
+            Spacer()
+            HStack(alignment:.center){
                 Button {
                     count += 1;
                 } label: {
@@ -62,9 +75,13 @@ struct SheetView : View {
                 }
 
             }
+            Spacer()
+
         }
     }
 }
 #Preview {
-    SheetsBootCamp()
+    @State var count : Int = 1;
+//    SheetsBootCamp()
+    SheetView(count:$count )
 }

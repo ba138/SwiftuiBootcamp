@@ -27,16 +27,15 @@ struct SheetsBootCamp: View {
                     .cornerRadius(10)
 
             }
-            .sheet(isPresented: $showSheet) {
-                VStack{
-                    Button {
-                        
-                    } label: {
-                        SheetView(count: $count)
-                    }
-
-                }
+            .fullScreenCover(isPresented: $showSheet) {
+                SheetView(count: $count)
             }
+//            .sheet(isPresented: $showSheet) {
+//                Button {
+//                    
+//                } label: {
+//                    SheetView(count: $count)
+//                }            }
 
         }
     }
@@ -81,7 +80,5 @@ struct SheetView : View {
     }
 }
 #Preview {
-    @State var count : Int = 1;
-//    SheetsBootCamp()
-    SheetView(count:$count )
+  SheetsBootCamp()
 }

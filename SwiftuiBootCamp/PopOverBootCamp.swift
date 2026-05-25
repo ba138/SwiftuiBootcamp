@@ -32,7 +32,7 @@ struct PopOverBootCamp: View {
 //            }
             // Method 2
             if ShowNewScreen {
-                NewScreen()
+                NewScreen(showScreen: $ShowNewScreen)
                     .transition(.move(edge: .bottom))
                     .animation(.spring, value: ShowNewScreen)
                     .padding(.top,100)
@@ -44,13 +44,15 @@ struct PopOverBootCamp: View {
 }
 struct NewScreen : View {
     @Environment(\.dismiss) var dismiss
+    @Binding var showScreen : Bool
 
     var body: some View {
         ZStack(alignment : .topLeading){
             Color.purple
                 .ignoresSafeArea()
             Button {
-                dismiss()
+//                dismiss()
+                showScreen.toggle()
                 
             } label: {
                 Image(systemName: "xmark")

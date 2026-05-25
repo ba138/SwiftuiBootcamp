@@ -36,10 +36,21 @@ struct PopOverBootCamp: View {
     }
 }
 struct NewScreen : View {
+    @Environment(\.dismiss) var dismiss
+
     var body: some View {
-        ZStack{
+        ZStack(alignment : .topLeading){
             Color.purple
                 .ignoresSafeArea()
+            Button {
+                dismiss()
+                
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.largeTitle)
+                    .padding(20)
+            }
+
         }
     }
 }

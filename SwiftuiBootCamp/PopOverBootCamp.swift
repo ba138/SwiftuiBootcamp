@@ -31,12 +31,17 @@ struct PopOverBootCamp: View {
 //                NewScreen()
 //            }
             // Method 2
-            if ShowNewScreen {
-                NewScreen(showScreen: $ShowNewScreen)
-                    .transition(.move(edge: .bottom))
-                    .animation(.spring, value: ShowNewScreen)
-                    .padding(.top,100)
-            }
+//            if ShowNewScreen {
+//                NewScreen(showScreen: $ShowNewScreen)
+//                    .transition(.move(edge: .bottom))
+//                    .animation(.spring, value: ShowNewScreen)
+//                    .padding(.top,100)
+//            }
+//         Method 3
+            NewScreen(showScreen: $ShowNewScreen)
+                .padding(.top,100)
+                .offset(y : ShowNewScreen ? 0 : UIScreen.main.bounds.height)
+                .animation(.spring)
 
 
         }

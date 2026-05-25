@@ -27,8 +27,15 @@ struct PopOverBootCamp: View {
                 Spacer()
 
             }
-            .sheet(isPresented: $ShowNewScreen) {
+//            .sheet(isPresented: $ShowNewScreen) {
+//                NewScreen()
+//            }
+            // Method 2
+            if ShowNewScreen {
                 NewScreen()
+                    .transition(.move(edge: .bottom))
+                    .animation(.spring, value: ShowNewScreen)
+                    .padding(.top,100)
             }
 
 

@@ -47,7 +47,7 @@ struct SheetView : View {
     var body: some View {
         VStack(alignment: .leading){
             Button {
-                
+                presentationMode.wrappedValue.dismiss()
             } label: {
                 Image(systemName: "xmark")
                     .font(.largeTitle)

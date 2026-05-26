@@ -12,7 +12,7 @@ struct NavigationViewBootCamp: View {
         NavigationView {
             ScrollView {
                 NavigationLink("Sheet") {
-                    SheetsBootCamp()
+                    MySecondView()
                 }
                 Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
                 Text("Hello, World!")
@@ -30,7 +30,27 @@ struct NavigationViewBootCamp: View {
         }
     }
 }
+struct MySecondView : View {
+    @Environment(\.dismiss) var dismiss
 
+    var body: some View {
+        ZStack{
+            Color.green
+                .ignoresSafeArea()
+                .navigationTitle("Green Screen")
+                .navigationBarHidden(true)
+            VStack{
+                Button {
+                    dismiss()
+                } label: {
+                    Text("BackButton")
+                }
+
+            }
+                
+        }
+    }
+}
 #Preview {
     NavigationViewBootCamp()
 }

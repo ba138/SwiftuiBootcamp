@@ -24,7 +24,9 @@ struct NavigationViewBootCamp: View {
             
             .font(.largeTitle)
 
-
+            .navigationBarItems(
+                leading: Image(systemName: "person.fill"),
+                                trailing: Image(systemName: "gear"))
 
 
         }

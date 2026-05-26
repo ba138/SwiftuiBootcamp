@@ -27,6 +27,7 @@ struct ListBootCamp: View {
                 ForEach(fruits, id:\.self) { index in
                     Text(index.capitalized)
                 }
+                .onDelete(perform: deleteFruit)
             } header: {
                 Text("Fruits")
                     .foregroundColor(.black)
@@ -38,10 +39,12 @@ struct ListBootCamp: View {
                     
                     )
             }
+            
             Section {
                 ForEach(vegatables, id:\.self) { index in
                     Text(index.capitalized)
                 }
+                .onDelete(perform: deleteVegetable)
             } header: {
                 Text("Vegatables")
                     .foregroundColor(.black)
@@ -54,6 +57,14 @@ struct ListBootCamp: View {
                     )
             }
         }
+    }
+    
+    private func deleteFruit(at offsets: IndexSet) {
+        fruits.remove(atOffsets: offsets)
+    }
+
+    private func deleteVegetable(at offsets: IndexSet) {
+        vegatables.remove(atOffsets: offsets)
     }
 }
 

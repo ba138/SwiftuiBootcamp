@@ -29,9 +29,7 @@ struct ListBootCamp: View {
                         Text(index.capitalized)
                     }
                     .onDelete(perform: deleteFruit)
-                    .onMove(perform: {indices,newOffset in
-                        fruits.move(fromOffsets: indices, toOffset: newOffset)
-                    })
+                    .onMove(perform: move)
                 } header: {
                     Text("Fruits")
                         .foregroundColor(.black)
@@ -73,7 +71,10 @@ struct ListBootCamp: View {
     private func deleteVegetable( offsets: IndexSet) {
         vegatables.remove(atOffsets: offsets)
     }
-}
+    func move (indices : IndexSet , newOffset : Int)
+    {
+        fruits.move(fromOffsets: indices, toOffset: newOffset)}
+    }
 
 #Preview {
     ListBootCamp()

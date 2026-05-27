@@ -40,7 +40,7 @@ struct ListBootCamp: View {
                             
                         )
                         .navigationTitle(Text("Grocery List"),
-                        )
+                        ).navigationBarItems(leading: EditButton())
                 }
                 
                 Section {

@@ -22,48 +22,50 @@ struct ListBootCamp: View {
     ]
     
     var body: some View {
-        List{
-            Section {
-                ForEach(fruits, id:\.self) { index in
-                    Text(index.capitalized)
+        NavigationView {
+            List{
+                Section {
+                    ForEach(fruits, id:\.self) { index in
+                        Text(index.capitalized)
+                    }
+                    .onDelete(perform: deleteFruit)
+                } header: {
+                    Text("Fruits")
+                        .foregroundColor(.black)
+                        .font(
+                            .system(
+                                size: 24,
+                                weight: .bold
+                            )
+                            
+                        )
                 }
-                .onDelete(perform: deleteFruit)
-            } header: {
-                Text("Fruits")
-                    .foregroundColor(.black)
-                    .font(
-                        .system(
-                       size: 24,
-                       weight: .bold
-                    )
-                    
-                    )
-            }
-            
-            Section {
-                ForEach(vegatables, id:\.self) { index in
-                    Text(index.capitalized)
+                
+                Section {
+                    ForEach(vegatables, id:\.self) { index in
+                        Text(index.capitalized)
+                    }
+                    .onDelete(perform: deleteVegetable)
+                } header: {
+                    Text("Vegatables")
+                        .foregroundColor(.black)
+                        .font(
+                            .system(
+                                size: 24,
+                                weight: .bold
+                            )
+                            
+                        )
                 }
-                .onDelete(perform: deleteVegetable)
-            } header: {
-                Text("Vegatables")
-                    .foregroundColor(.black)
-                    .font(
-                        .system(
-                       size: 24,
-                       weight: .bold
-                    )
-                    
-                    )
             }
         }
     }
     
-    private func deleteFruit(at offsets: IndexSet) {
+    private func deleteFruit( offsets: IndexSet) {
         fruits.remove(atOffsets: offsets)
     }
 
-    private func deleteVegetable(at offsets: IndexSet) {
+    private func deleteVegetable( offsets: IndexSet) {
         vegatables.remove(atOffsets: offsets)
     }
 }

@@ -40,15 +40,14 @@ struct ListBootCamp: View {
                             )
                             
                         )
-                        .navigationTitle(Text("Grocery List"),
-                        ).navigationBarItems(leading: EditButton())
+                       
                 }
-                
                 Section {
                     ForEach(vegatables, id:\.self) { index in
                         Text(index.capitalized)
                     }
                     .onDelete(perform: deleteVegetable)
+                    .onMove(perform: moveVe(indices:newOffset:))
                 } header: {
                     Text("Vegatables")
                         .foregroundColor(.black)
@@ -60,7 +59,12 @@ struct ListBootCamp: View {
                             
                         )
                 }
+               
+
             }
+            .navigationTitle(Text("Grocery List"),
+            ).navigationBarItems(leading: EditButton())
+            
         }
     }
     
@@ -74,6 +78,10 @@ struct ListBootCamp: View {
     func move (indices : IndexSet , newOffset : Int)
     {
         fruits.move(fromOffsets: indices, toOffset: newOffset)}
+    func moveVe (indices : IndexSet , newOffset : Int)
+    {
+        vegatables.move(fromOffsets: indices, toOffset: newOffset)}
+
     }
 
 #Preview {

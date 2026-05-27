@@ -29,6 +29,9 @@ struct ListBootCamp: View {
                         Text(index.capitalized)
                     }
                     .onDelete(perform: deleteFruit)
+                    .onMove(perform: {indices,newOffset in
+                        fruits.move(fromOffsets: indices, toOffset: newOffset)
+                    })
                 } header: {
                     Text("Fruits")
                         .foregroundColor(.black)

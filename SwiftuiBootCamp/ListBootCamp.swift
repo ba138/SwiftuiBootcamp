@@ -39,6 +39,8 @@ struct ListBootCamp: View {
                             )
                             
                         )
+                        .navigationTitle(Text("Grocery List"),
+                        )
                 }
                 
                 Section {

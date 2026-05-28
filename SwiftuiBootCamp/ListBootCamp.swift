@@ -65,16 +65,19 @@ struct ListBootCamp: View {
             .navigationTitle(Text("Grocery List"),
             ).navigationBarItems(
                 leading: EditButton(),
-                                 trailing: Button(
-                                    action: {
-                                        fruits.append("Coconut")
-            },
-                                    label: {
-                Text("Add")
-            })
+                                 trailing:addButton
             )
             
         }
+    }
+    var addButton : some View{
+        Button(
+           action: {
+               add()
+},
+           label: {
+Text("Add")
+})
     }
     
     private func deleteFruit( offsets: IndexSet) {
@@ -90,6 +93,10 @@ struct ListBootCamp: View {
     func moveVe (indices : IndexSet , newOffset : Int)
     {
         vegatables.move(fromOffsets: indices, toOffset: newOffset)}
+    func add(){
+        fruits.append("Coconut")
+        vegatables.append("Genger")
+    }
 
     }
 

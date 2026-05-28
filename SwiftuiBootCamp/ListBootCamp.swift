@@ -62,6 +62,7 @@ struct ListBootCamp: View {
                
 
             }
+            .listStyle(GroupedListStyle())
             .navigationTitle(Text("Grocery List"),
             ).navigationBarItems(
                 leading: EditButton(),

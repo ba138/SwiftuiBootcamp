@@ -63,7 +63,16 @@ struct ListBootCamp: View {
 
             }
             .navigationTitle(Text("Grocery List"),
-            ).navigationBarItems(leading: EditButton())
+            ).navigationBarItems(
+                leading: EditButton(),
+                                 trailing: Button(
+                                    action: {
+                                        fruits.append("Coconut")
+            },
+                                    label: {
+                Text("Add")
+            })
+            )
             
         }
     }

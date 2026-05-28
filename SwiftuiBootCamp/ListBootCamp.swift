@@ -30,6 +30,8 @@ struct ListBootCamp: View {
                     }
                     .onDelete(perform: deleteFruit)
                     .onMove(perform: move)
+                    .listRowBackground(Color.red)
+                    
                 } header: {
                     Text("Fruits")
                         .foregroundColor(.black)
@@ -62,7 +64,7 @@ struct ListBootCamp: View {
                
 
             }
-            .listStyle(GroupedListStyle())
+            .listStyle(InsetGroupedListStyle())
             .navigationTitle(Text("Grocery List"),
             ).navigationBarItems(
                 leading: EditButton(),

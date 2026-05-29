@@ -15,7 +15,13 @@ struct AlertBootCamp: View {
         } label: {
             Text("Click Here")
         }.alert(isPresented: $showAlert) {
-            Alert(title: Text("Error"))
+//            Alert(title: Text("Error"))
+            Alert(
+                title: Text("Error"),
+                  message: Text("This is th error"),
+                primaryButton: .destructive(Text("Delete")), secondaryButton: .cancel()
+                
+            )
         }
 
     }

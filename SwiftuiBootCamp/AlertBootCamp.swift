@@ -17,19 +17,21 @@ struct AlertBootCamp: View {
                 showAlert.toggle()
             } label: {
                 Text("Click Here")
-            }.alert(isPresented: $showAlert) {
-                //            Alert(title: Text("Error"))
-                Alert(
-                    title: Text("Error"),
-                    message: Text("This is th error"),
-                    primaryButton: .destructive(Text("Delete"),action: {
-                        bgColor = .white
-                    }), secondaryButton: .cancel()
-                    
-                )
-            }
+            }.alert(isPresented: $showAlert, content: {
+                getAlert()
+            })
         }
 
+    }
+    func getAlert() -> Alert {
+        return Alert(
+            title: Text("Error"),
+            message: Text("This is th error"),
+            primaryButton: .destructive(Text("Delete"),action: {
+                bgColor = .white
+            }), secondaryButton: .cancel()
+            
+        )
     }
 }
 

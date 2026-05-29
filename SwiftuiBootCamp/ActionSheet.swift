@@ -16,11 +16,14 @@ struct ActionSheetBootCamp: View {
             Text("Click Me")
         })
         .actionSheet(isPresented: $showSheet, content: {
-            ActionSheet(title: Text("hello i am action sheet",
-        
-                                   ))
+            showsheet()
         })
         
+    }
+    func showsheet() -> ActionSheet {
+        return ActionSheet(title: Text("hello i am action sheet",
+                                       
+                                      ))
     }
 }
 

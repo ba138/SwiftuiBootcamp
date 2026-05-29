@@ -21,9 +21,18 @@ struct ActionSheetBootCamp: View {
         
     }
     func showsheet() -> ActionSheet {
-        return ActionSheet(title: Text("hello i am action sheet",
-                                       
-                                      ))
+        let button1 : ActionSheet.Button = .default(Text("button1"))
+        let button2 : ActionSheet.Button = .destructive(Text("button2"))
+        let button3 : ActionSheet.Button = .cancel(Text("cancle"))
+        return ActionSheet(
+            title: Text("This is the title"),
+        message: Text("Text for the Action sheet"),
+            buttons : [
+                button1,
+                button2,
+                button3,
+            ]
+        )
     }
 }
 

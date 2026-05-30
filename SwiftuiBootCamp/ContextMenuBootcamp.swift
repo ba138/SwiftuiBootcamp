@@ -18,6 +18,12 @@ struct ContextMenuBootcamp: View {
             Text("How to use Context Menu".capitalized)
                 
         }
+        .foregroundColor(.white)
+        .padding()
+        .background(
+            Color.green
+                .cornerRadius(20)
+        )
     }
 }
 

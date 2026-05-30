@@ -25,7 +25,26 @@ struct ContextMenuBootcamp: View {
                 .cornerRadius(20)
         )
         .contextMenu {
-            Text("This is context menu")
+            Button {
+                
+            } label: {
+                Label("Button 1", systemImage: "flame.fill")
+            }
+            Button {
+                
+            } label: {
+                Text("Button 2")
+            }
+            Button {
+                
+            } label: {
+                HStack {
+                    Text("Button 2")
+                    Image(systemName: "heart.fill")
+                }
+            }
+
+
         }
     }
 }

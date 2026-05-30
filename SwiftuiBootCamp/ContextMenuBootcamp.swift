@@ -24,6 +24,9 @@ struct ContextMenuBootcamp: View {
             Color.green
                 .cornerRadius(20)
         )
+        .contextMenu {
+            Text("This is context menu")
+        }
     }
 }
 

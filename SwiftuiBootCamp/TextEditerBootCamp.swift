@@ -23,6 +23,7 @@ struct TextEditerBootCamp: View {
                         maxHeight: 250
                     )
                     .colorMultiply(Color.gray.opacity(0.3))
+                    .cornerRadius(10)
                     .padding()
                 
 //                    .accentColor(Color.gray)

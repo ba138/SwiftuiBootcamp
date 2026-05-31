@@ -57,8 +57,13 @@ Text("Login")
             Spacer()
             HStack {
                 Text("Already have account?".capitalized)
-                Text("Register")
-                    .font(.system(size: 18,weight: .bold))
+                Button {
+                    
+                } label: {
+                    Text("Register")
+                        .font(.system(size: 18,weight: .bold))                }
+
+                
             }
             .frame(maxWidth: .infinity)
 

@@ -26,6 +26,7 @@ struct PickerBootCamp: View {
                     Text("\(index)").tag("\(index)")
 
                 }
+                .pickerStyle(InlinePickerStyle())
                 
             }
             )

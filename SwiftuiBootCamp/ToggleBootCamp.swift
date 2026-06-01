@@ -10,11 +10,19 @@ import SwiftUI
 struct ToggleBootCamp: View {
     @State var isToggle : Bool = false
     var body: some View {
-        Toggle(isOn: $isToggle) {
-            Text("Notifications")
+        VStack {
+            HStack{
+                Text("Status :")
+                Text(isToggle ? "Online" : "Offline")
+                    .foregroundColor(isToggle ? .green : .gray)
+            }
+            Toggle(isOn: $isToggle) {
+                Text("Notifications")
+            }
+            .toggleStyle(SwitchToggleStyle(tint:Color.red))
+            .padding()
+            Spacer()
         }
-        .toggleStyle(SwitchToggleStyle(tint:Color.red))
-        .padding()
     }
 }
 

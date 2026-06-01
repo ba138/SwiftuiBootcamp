@@ -13,6 +13,7 @@ struct ToggleBootCamp: View {
         Toggle(isOn: $isToggle) {
             Text("Notifications")
         }
+        .toggleStyle(SwitchToggleStyle(tint:Color.red))
         .padding()
     }
 }

@@ -28,6 +28,7 @@ struct DataPickerBootCamp: View {
     var dateFromter : DateFormatter {
         let formter = DateFormatter()
         formter.dateStyle = .short
+        formter.timeStyle = .short
         return formter
     }
     var body: some View {
@@ -55,7 +56,7 @@ struct DataPickerBootCamp: View {
                     in: allowedRange,
                     displayedComponents: .date
                 )
-                .datePickerStyle(GraphicalDatePickerStyle())
+                .datePickerStyle(CompactDatePickerStyle())
                 .padding(.horizontal)
                 
                 NavigationLink(destination: RegisterView()) {

@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct DataPickerBootCamp: View {
+    @State var selectedDate : Date = Date()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        DatePicker("Please Select a Date".uppercased(), selection: $selectedDate
+        )
     }
 }
 

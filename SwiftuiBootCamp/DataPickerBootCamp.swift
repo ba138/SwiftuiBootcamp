@@ -12,12 +12,16 @@ struct DataPickerBootCamp: View {
     var body: some View {
         NavigationStack {
             VStack {
-                DatePicker("Please Select a Date".uppercased(), selection: $selectedDate
-                )
-                .datePickerStyle(
-                    //            WheelDatePickerStyle()
-                    GraphicalDatePickerStyle()
-                )
+//                DatePicker("Please Select a Date".uppercased(), selection: $selectedDate
+//                )
+//                .datePickerStyle(
+//                    //            WheelDatePickerStyle()
+//                    GraphicalDatePickerStyle()
+//                )
+                DatePicker(
+                    "Selecte a Date", selection: $selectedDate, displayedComponents: [.date]
+                
+                ).padding()
                 NavigationLink(destination: RegisterView()) {
                     Text("Next")
                         .font(.headline)

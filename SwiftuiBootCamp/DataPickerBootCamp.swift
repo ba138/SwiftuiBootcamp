@@ -9,6 +9,23 @@ import SwiftUI
 
 struct DataPickerBootCamp: View {
     @State var selectedDate : Date = Date()
+    
+    private var allowedRange: ClosedRange<Date> {
+        var calendar = Calendar.current
+        calendar.timeZone = .current
+        var startComponents = DateComponents()
+        startComponents.year = 2018
+        startComponents.month = 1
+        startComponents.day = 1
+        var endComponents = DateComponents()
+        endComponents.year = 2026
+        endComponents.month = 12
+        endComponents.day = 31
+        let startDate = calendar.date(from: startComponents) ?? Date()
+        let endDate = calendar.date(from: endComponents) ?? Date()
+        return startDate...endDate
+    }
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -18,10 +35,23 @@ struct DataPickerBootCamp: View {
 //                    //            WheelDatePickerStyle()
 //                    GraphicalDatePickerStyle()
 //                )
-                DatePicker(
-                    "Selecte a Date", selection: $selectedDate, displayedComponents: [.date]
+//                DatePicker(
+//                    "Selecte a Date", selection: $selectedDate, displayedComponents: [
+////                        .date
+//                        .hourAndMinute
+//                    ]
+//                
+//                ).padding()
                 
-                ).padding()
+                DatePicker(
+                    "Please Select a Date".uppercased(),
+                    selection: $selectedDate,
+                    in: allowedRange,
+                    displayedComponents: .date
+                )
+                .datePickerStyle(GraphicalDatePickerStyle())
+                .padding(.horizontal)
+                
                 NavigationLink(destination: RegisterView()) {
                     Text("Next")
                         .font(.headline)

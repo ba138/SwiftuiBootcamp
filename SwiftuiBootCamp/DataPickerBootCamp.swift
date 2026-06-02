@@ -25,7 +25,11 @@ struct DataPickerBootCamp: View {
         let endDate = calendar.date(from: endComponents) ?? Date()
         return startDate...endDate
     }
-    
+    var dateFromter : DateFormatter {
+        let formter = DateFormatter()
+        formter.dateStyle = .short
+        return formter
+    }
     var body: some View {
         NavigationStack {
             VStack {
@@ -41,7 +45,9 @@ struct DataPickerBootCamp: View {
 //                        .hourAndMinute
 //                    ]
 //                
-//                ).padding()
+//                )."padding()
+                Text("Selected Date :")
+                Text(dateFromter.string(from: selectedDate))
                 
                 DatePicker(
                     "Please Select a Date".uppercased(),

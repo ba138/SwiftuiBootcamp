@@ -14,7 +14,7 @@ struct PickerBootCamp: View {
         "Office",
         "Hotel",
         "Cabin"
-    ]
+    ].reversed()
     var body: some View {
         Menu {
             Picker(selection: $slectedText) {

@@ -10,8 +10,31 @@ import SwiftUI
 struct DataPickerBootCamp: View {
     @State var selectedDate : Date = Date()
     var body: some View {
-        DatePicker("Please Select a Date".uppercased(), selection: $selectedDate
-        )
+        NavigationStack {
+            VStack {
+                DatePicker("Please Select a Date".uppercased(), selection: $selectedDate
+                )
+                .datePickerStyle(
+                    //            WheelDatePickerStyle()
+                    GraphicalDatePickerStyle()
+                )
+                NavigationLink(destination: RegisterView()) {
+                    Text("Next")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(
+                            Color.red
+                                .cornerRadius(10)
+                        )
+                        .foregroundColor(.white)
+                        .padding()
+                }
+                
+            }
+        }
+        
+        
     }
 }
 

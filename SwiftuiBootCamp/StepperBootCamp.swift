@@ -18,12 +18,18 @@ struct StepperBootCamp: View {
                 .frame(width:100 + widthValue,height: 100)
             
             Stepper("Stepper 2") {
-                widthValue += 10
-            }onDecrement: {
-               widthValue -= 10
+increment(amount: 10)            }
+            onDecrement: {
+               decrement(amount: 10)
             }
         
         } .padding()
+    }
+    func increment (amount : CGFloat){
+        widthValue += amount
+    }
+    func decrement (amount : CGFloat){
+        widthValue -= amount
     }
 }
 

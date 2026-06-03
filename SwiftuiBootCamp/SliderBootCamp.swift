@@ -22,12 +22,24 @@ struct SliderBootCamp: View {
 //                value : $sliderValue
 //            )
 //            Slider(value: $sliderValue,in: 1...5)
-            Slider(value: $sliderValue,
-                   in: 1...5,
-                   step: 0.5
+//            Slider(value: $sliderValue,
+//                   in: 1...5,
+//                   step: 0.5
+//            )
+            Slider(
+                value: $sliderValue,
+                   in:1...5 ,
+                   step: 0.5,
+                onEditingChanged: { (_) in
+                    
+                },
+                minimumValueLabel: Text("1"), maximumValueLabel: Text("5"),
+                label: {
+             Text("Title")
+         },
             )
             .accentColor(.red)
-        }
+        }.padding()
     }
 }
 

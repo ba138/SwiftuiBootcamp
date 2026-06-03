@@ -13,13 +13,19 @@ struct SliderBootCamp: View {
         VStack {
             HStack {
                 Text(" Rating : ")
-                Text("\(sliderValue)")
+                Text(
+//                    "\(sliderValue)"
+                    String(format: "%.1f",sliderValue)
+                )
             }
 //            Slider(
 //                value : $sliderValue
 //            )
 //            Slider(value: $sliderValue,in: 1...5)
-            Slider(value: $sliderValue, in: 1...5,step: 0.5)
+            Slider(value: $sliderValue,
+                   in: 1...5,
+                   step: 0.5
+            )
             .accentColor(.red)
         }
     }

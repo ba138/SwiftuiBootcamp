@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct SliderBootCamp: View {
-    @State var sliderValue : Double = 10
+    @State var sliderValue : Double = 3
     var body: some View {
-        Slider(
-            value : $sliderValue
-        )
-        .accentColor(.red)
+        VStack {
+            HStack {
+                Text(" Rating : ")
+                Text("\(sliderValue)")
+            }
+//            Slider(
+//                value : $sliderValue
+//            )
+            Slider(value: $sliderValue,in: 1...5)
+            .accentColor(.red)
+        }
     }
 }
 

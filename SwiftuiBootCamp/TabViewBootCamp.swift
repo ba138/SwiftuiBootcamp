@@ -11,19 +11,19 @@ struct TabViewBootCamp: View {
     var body: some View {
 
         TabView {
-            Text("Home View")
-                .tabItem{
+HomeViewBootCamp()
+            .tabItem{
                     Image(systemName: "house.fill")
                     Text("Home")
                     
                 }
-            Text("Discover")
+DiscoverViewBootCamp()
                 .tabItem{
                     Image(systemName: "globe.fill")
                     Text("Discover")
                     
                 }
-            Text("Account")
+            SettingViewBootCamp()
                 .tabItem{
                     Image(systemName: "person.fill")
                     Text("Account")

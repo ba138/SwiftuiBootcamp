@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct TabViewBootCamp: View {
-    @State var selectedTab : Int = 1
+    @State var selectedTab : Int = 0
     var body: some View {
 
         TabView (selection : $selectedTab){
-HomeViewBootCamp()
+HomeViewBootCamp(slectedTab: $selectedTab)
             .tabItem{
                     Image(systemName: "house.fill")
                     Text("Home")
@@ -29,7 +29,7 @@ DiscoverViewBootCamp()
                     Image(systemName: "person.fill")
                     Text("Account")
                     
-                }.tag(3)
+                }.tag(2)
         }
     }
 }

@@ -8,17 +8,32 @@
 import SwiftUI
 
 struct HomeViewBootCamp: View {
+    @Binding var slectedTab : Int
     var body: some View {
         ZStack {
             Color.red
                 .ignoresSafeArea()
-            Text("Home View")
-                .font(.largeTitle)
-                .foregroundColor(.white)
+            VStack {
+                Text("Home View")
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+                Button {
+                    slectedTab = 2
+                } label: {
+                    Text("Go to profile".capitalized)
+                        .padding()
+                        .background()
+                        .cornerRadius(10)
+                }
+
+            }
+            
         }
     }
 }
 
-#Preview {
-    HomeViewBootCamp()
-}
+//#Preview {
+//    @Binding var slectedTab : Int
+//
+//    HomeViewBootCamp()
+//}

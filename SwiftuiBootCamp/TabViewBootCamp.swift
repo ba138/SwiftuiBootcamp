@@ -9,7 +9,27 @@ import SwiftUI
 
 struct TabViewBootCamp: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+
+        TabView {
+            Text("Home View")
+                .tabItem{
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                    
+                }
+            Text("Discover")
+                .tabItem{
+                    Image(systemName: "globe.fill")
+                    Text("Discover")
+                    
+                }
+            Text("Account")
+                .tabItem{
+                    Image(systemName: "person.fill")
+                    Text("Account")
+                    
+                }
+        }
     }
 }
 

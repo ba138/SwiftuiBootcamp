@@ -9,17 +9,28 @@ import SwiftUI
 
 struct TabViewBootCamp: View {
     @State var selectedTab : Int = 0
+    let  icons : [String] = [
+        "person.fill",
+        "heart.fill",
+        "globe.fill",
+        "house.fill",
+    ]
     var body: some View {
         TabView{
-            RoundedRectangle(cornerRadius: 25)
-                .foregroundColor(.red)
-                
-            RoundedRectangle(cornerRadius: 25)
-                .foregroundColor(.green)
-
-
-            RoundedRectangle(cornerRadius: 25)
-                .foregroundColor(.cyan)
+            ForEach(icons,id: \.self) { icon in
+                Image(systemName: icon)
+                    .resizable()
+                    .scaledToFit()
+            }
+//            RoundedRectangle(cornerRadius: 25)
+//                .foregroundColor(.red)
+//                
+//            RoundedRectangle(cornerRadius: 25)
+//                .foregroundColor(.green)
+//
+//
+//            RoundedRectangle(cornerRadius: 25)
+//                .foregroundColor(.cyan)
 
 
         }

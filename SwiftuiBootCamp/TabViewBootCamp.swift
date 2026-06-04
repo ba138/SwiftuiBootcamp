@@ -8,27 +8,28 @@
 import SwiftUI
 
 struct TabViewBootCamp: View {
+    @State var selectedTab : Int = 1
     var body: some View {
 
-        TabView {
+        TabView (selection : $selectedTab){
 HomeViewBootCamp()
             .tabItem{
                     Image(systemName: "house.fill")
                     Text("Home")
                     
-                }
+            }.tag(0)
 DiscoverViewBootCamp()
                 .tabItem{
                     Image(systemName: "globe.fill")
                     Text("Discover")
                     
-                }
+                }.tag(1)
             SettingViewBootCamp()
                 .tabItem{
                     Image(systemName: "person.fill")
                     Text("Account")
                     
-                }
+                }.tag(3)
         }
     }
 }

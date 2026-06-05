@@ -17,6 +17,10 @@ struct DarkModeBootCamp: View {
                         .foregroundColor(.primary)
                     Text("This is Secondary Color")
                         .foregroundColor(.secondary)
+//                    Text("This is Black Color")
+//                        .foregroundColor(.black)
+                    Text("This is adaptive  Color")
+                        .foregroundColor(Color("adaptiveColor"))
                     
                 }
             }

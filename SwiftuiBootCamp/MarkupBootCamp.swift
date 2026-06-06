@@ -14,6 +14,11 @@ struct MarkupBootCamp: View {
     ]
     @State var showAlert : Bool = false
         // MARK: BODY
+    /*
+     1) add Navigation View
+     2) add Button for Alert
+     3) add Foreeach for loop through Array and show text
+     */
     var body: some View {
         NavigationView{
             VStack {

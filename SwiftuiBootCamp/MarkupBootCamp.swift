@@ -18,8 +18,8 @@ struct MarkupBootCamp: View {
                 Button("Alert") {
                     showAlert.toggle()
                 }
-                .alert("this is alert", isPresented: $showAlert, actions: {
-                    
+                .alert(isPresented: $showAlert, content: {
+                    getAlert(text: "this is the alert".capitalized)
                 })
                 .frame(maxWidth: .infinity,alignment: .topTrailing)
                 Spacer()
@@ -32,6 +32,9 @@ struct MarkupBootCamp: View {
             .padding()
         }
         }
+    func getAlert(text : String)-> Alert{
+        return Alert(title: Text(text))
+    }
 }
 
 

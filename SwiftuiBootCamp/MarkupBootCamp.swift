@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct MarkupBootCamp: View {
+    // MARK: PROPERTIES
     @State var fruits : [String] = [
         "Apple","Banana" , "grapes"
     ]
     @State var showAlert : Bool = false
+        // MARK: BODY
     var body: some View {
         NavigationView{
             VStack {
@@ -32,6 +34,7 @@ struct MarkupBootCamp: View {
             .padding()
         }
         }
+    //MARK: FUNCTIONS
     func getAlert(text : String)-> Alert{
         return Alert(title: Text(text))
     }

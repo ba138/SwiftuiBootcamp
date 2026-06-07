@@ -14,6 +14,9 @@ struct OnAppearBootCamp: View {
             ScrollView {
                 Text(myText)
             }
+            .onAppear(perform: {
+                myText = "Appearning text"
+            })
             .navigationTitle(Text("ON Appear"))
         }
     }

@@ -15,9 +15,15 @@ struct OnAppearBootCamp: View {
                 Text(myText)
             }
             .onAppear(perform: {
-                myText = "Appearning text"
+                DispatchQueue.main.asyncAfter(deadline:
+                        .now() + 4
+                ){
+                    myText = "Appearning text"
+
+                }
+                
             })
-            .navigationTitle(Text("ON Appear"))
+            .navigationTitle(Text("ON Appear Boot Camp"))
         }
     }
 }

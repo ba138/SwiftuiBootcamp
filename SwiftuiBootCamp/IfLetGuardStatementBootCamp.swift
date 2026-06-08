@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct IfLetGuardStatementBootCamp: View {
-    @State var displayText : String = ""
+    @State var displayText : String? = nil
     var body: some View {
         
         NavigationView{
             VStack{
                 Text("We are preticing Safe Coding!")
-                Text(displayText)
+                if let text = displayText{
+                    Text(text)
+
+                }
                 Spacer()
             }
             .navigationTitle(

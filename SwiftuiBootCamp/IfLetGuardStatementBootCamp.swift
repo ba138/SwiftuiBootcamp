@@ -22,13 +22,16 @@ struct IfLetGuardStatementBootCamp: View {
                     .font(.title)
             )
             .onAppear{
-                
+                loadData()
             }
         }
     }
     func loadData()
     {
-     displayText = "this is safetext"
+        DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
+            displayText = "this is safetext"
+
+        })
     }
 }
 

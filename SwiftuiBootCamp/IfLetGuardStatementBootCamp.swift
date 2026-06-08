@@ -10,7 +10,7 @@ import SwiftUI
 struct IfLetGuardStatementBootCamp: View {
     @State var displayText : String = ""
     var body: some View {
-
+        
         NavigationView{
             VStack{
                 Text("We are preticing Safe Coding!")
@@ -19,8 +19,16 @@ struct IfLetGuardStatementBootCamp: View {
             }
             .navigationTitle(
                 Text("Safe Coding")
+                    .font(.title)
             )
+            .onAppear{
+                
+            }
         }
+    }
+    func loadData()
+    {
+     displayText = "this is safetext"
     }
 }
 

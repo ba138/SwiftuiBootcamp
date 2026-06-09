@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct TapGestureBootCamp: View {
+    @State var isSelected : Bool = false
     var body: some View {
         VStack(spacing: 20) {
             RoundedRectangle(cornerRadius: 24)
                 .frame(height: 300)
+                .foregroundColor(isSelected ? Color.green : Color.black)
             Button {
-                
+                isSelected.toggle()
             } label: {
             Text("Button")
                     .font(.headline)

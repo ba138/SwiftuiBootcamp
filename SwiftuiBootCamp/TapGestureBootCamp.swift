@@ -25,6 +25,16 @@ struct TapGestureBootCamp: View {
                     .background(.blue)
                     .cornerRadius(20)
             }
+            Text("Tap Gesture")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(height: 56)
+                    .frame(maxWidth: .infinity)
+                    .background(.blue)
+                    .cornerRadius(20)
+                    .onTapGesture {
+                        isSelected.toggle()
+                    }
             Spacer()
 
         }

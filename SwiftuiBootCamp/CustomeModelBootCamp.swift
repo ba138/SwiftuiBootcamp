@@ -6,6 +6,14 @@
 //
 
 import SwiftUI
+struct UserModel {
+    let userId : String = UUID()
+        .uuidString
+    let UserName : String
+    let phoneNumber : Int
+    let last name : String
+    
+}
 
 struct CustomeModelBootCamp: View {
     @State var users : [String] = [

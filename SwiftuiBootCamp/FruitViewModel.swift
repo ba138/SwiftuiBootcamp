@@ -12,6 +12,9 @@ class FruitsViewModel: ObservableObject {
   @Published  var fruitArray : [FruitsModel] = [
     ]
     @Published var isLoading : Bool = false
+    init(){
+        getFruits()
+    }
     func getFruits()
     {
         let fruit1 = FruitsModel(name: "Grabes", count: 4)

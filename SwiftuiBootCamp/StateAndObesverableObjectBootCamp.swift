@@ -17,9 +17,9 @@ struct FruitsModel : Identifiable {
 struct StateAndObesverableObjectBootCamp: View {
 //    @State var fruitArray : [FruitsModel] = [
 //    ]
-    @ObservedObject  var fruitViewModel = FruitsViewModel()
+    @StateObject  var fruitViewModel = FruitsViewModel()
     var body: some View {
-        VStack{
+        Group{
             if fruitViewModel.isLoading{
                 ProgressView()
             }
@@ -36,9 +36,7 @@ struct StateAndObesverableObjectBootCamp: View {
                     }.onDelete(perform: fruitViewModel.delete )
                 }
                 
-                .onAppear{
-                    fruitViewModel  .getFruits()
-                }
+                
             }
         }
     }

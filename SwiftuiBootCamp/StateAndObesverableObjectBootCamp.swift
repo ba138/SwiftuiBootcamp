@@ -26,8 +26,10 @@ struct StateAndObesverableObjectBootCamp: View {
                         .font(.headline)
                         .bold()
                 }
-            }
-        }.onAppear{
+            }.onDelete(perform:delete )
+        }
+        
+        .onAppear{
             getFruits()
         }
     }
@@ -42,6 +44,9 @@ struct StateAndObesverableObjectBootCamp: View {
         fruitArray.append(fruit3)
 
         
+    }
+    func delete(index :IndexSet){
+        fruitArray.remove(atOffsets: index)
     }
 }
 

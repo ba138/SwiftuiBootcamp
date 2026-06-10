@@ -6,33 +6,15 @@
 //
 
 import SwiftUI
+import Combine
 struct FruitsModel : Identifiable {
     let id : String = UUID().uuidString
     let name : String
     let count : Int
 }
-
-struct StateAndObesverableObjectBootCamp: View {
-    @State var fruitArray : [FruitsModel] = [
-        FruitsModel(name: "Apple", count: 5)
+class FruitsViewModel: ObservableObject {
+  @Published  var fruitArray : [FruitsModel] = [
     ]
-    var body: some View {
-        List{
-            ForEach(fruitArray) { fruit in
-                HStack{
-                    Text("\(fruit.count)")
-                        .foregroundColor(.red)
-                    Text(fruit.name)
-                        .font(.headline)
-                        .bold()
-                }
-            }.onDelete(perform:delete )
-        }
-        
-        .onAppear{
-            getFruits()
-        }
-    }
     func getFruits()
     {
         let fruit1 = FruitsModel(name: "Grabes", count: 4)
@@ -48,6 +30,30 @@ struct StateAndObesverableObjectBootCamp: View {
     func delete(index :IndexSet){
         fruitArray.remove(atOffsets: index)
     }
+}
+
+struct StateAndObesverableObjectBootCamp: View {
+//    @State var fruitArray : [FruitsModel] = [
+//    ]
+    @StateObject private var fruitViewModel = FruitsViewModel()
+    var body: some View {
+        List{
+            ForEach(fruitViewModel.fruitArray) { fruit in
+                HStack{
+                    Text("\(fruit.count)")
+                        .foregroundColor(.red)
+                    Text(fruit.name)
+                        .font(.headline)
+                        .bold()
+                }
+            }.onDelete(perform: fruitViewModel.delete )
+        }
+        
+        .onAppear{
+            fruitViewModel  .getFruits()
+        }
+    }
+   
 }
 
 #Preview {

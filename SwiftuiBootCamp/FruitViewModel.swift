@@ -22,8 +22,9 @@ class FruitsViewModel: ObservableObject {
             self.fruitArray.append(fruit1)
             self.fruitArray.append(fruit2)
             self.fruitArray.append(fruit3)
-            self.isLoading = false
         }
+        isLoading = false
+
        
 
         

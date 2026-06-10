@@ -17,22 +17,29 @@ struct FruitsModel : Identifiable {
 struct StateAndObesverableObjectBootCamp: View {
 //    @State var fruitArray : [FruitsModel] = [
 //    ]
-    @StateObject private var fruitViewModel = FruitsViewModel()
+    @ObservedObject  var fruitViewModel = FruitsViewModel()
     var body: some View {
-        List{
-            ForEach(fruitViewModel.fruitArray) { fruit in
-                HStack{
-                    Text("\(fruit.count)")
-                        .foregroundColor(.red)
-                    Text(fruit.name)
-                        .font(.headline)
-                        .bold()
+        VStack{
+            if fruitViewModel.isLoading{
+                ProgressView()
+            }
+                else{
+                List{
+                    ForEach(fruitViewModel.fruitArray) { fruit in
+                        HStack{
+                            Text("\(fruit.count)")
+                                .foregroundColor(.red)
+                            Text(fruit.name)
+                                .font(.headline)
+                                .bold()
+                        }
+                    }.onDelete(perform: fruitViewModel.delete )
                 }
-            }.onDelete(perform: fruitViewModel.delete )
-        }
-        
-        .onAppear{
-            fruitViewModel  .getFruits()
+                
+                .onAppear{
+                    fruitViewModel  .getFruits()
+                }
+            }
         }
     }
    

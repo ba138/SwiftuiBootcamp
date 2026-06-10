@@ -13,9 +13,20 @@ struct FruitsModel : Identifiable {
 }
 
 struct StateAndObesverableObjectBootCamp: View {
+    @State var fruitArray : [FruitsModel] = [
+        FruitsModel(name: "Apple", count: 5)
+    ]
     var body: some View {
         List{
-            
+            ForEach(fruitArray) { fruit in
+                HStack{
+                    Text("\(fruit.count)")
+                        .foregroundColor(.red)
+                    Text(fruit.name)
+                        .font(.headline)
+                        .bold()
+                }
+            }
         }    }
 }
 

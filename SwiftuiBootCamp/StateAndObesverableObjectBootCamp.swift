@@ -17,6 +17,8 @@ struct FruitsModel : Identifiable {
 struct StateAndObesverableObjectBootCamp: View {
 //    @State var fruitArray : [FruitsModel] = [
 //    ]
+    // stateobject for parent class
+    // observeableobject for subview during passing arugments
     @StateObject  var fruitViewModel = FruitsViewModel()
     var body: some View {
         Group{

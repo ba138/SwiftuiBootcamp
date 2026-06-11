@@ -10,15 +10,34 @@ import SwiftUI
 struct EnviromentObjectBootCamp: View {
     @StateObject var viewModel : EnvorimentViewModel = EnvorimentViewModel()
     var body: some View {
-        VStack{
+        NavigationView{
             List {
                 ForEach(viewModel.dataArray, id: \.self) { items in
-                    NavigationLink(destination: Text("des")) {
+                    NavigationLink(destination: DetailView(item: items)) {
                         Text(items)
+                            .font(.headline)
+                            .bold()
+                            .foregroundColor(.black)
 
                     }
                 }
             }
+        }
+    }
+}
+struct DetailView : View {
+    let  item : String
+    var body: some View {
+        ZStack{
+            Color.purple.ignoresSafeArea()
+            Text(item)
+                .font(.headline)
+                .padding()
+                .padding(.horizontal,10)
+                .background(.white)
+                .foregroundColor(.purple)
+               
+                .cornerRadius(10)
         }
     }
 }

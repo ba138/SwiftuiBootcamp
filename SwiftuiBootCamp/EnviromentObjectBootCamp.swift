@@ -22,7 +22,8 @@ struct EnviromentObjectBootCamp: View {
                     }
                 }
             }
-        }
+        }            .environmentObject(viewModel)
+
     }
 }
 struct DetailView : View {
@@ -30,18 +31,24 @@ struct DetailView : View {
     var body: some View {
         ZStack{
             Color.purple.ignoresSafeArea()
-            Text(item)
-                .font(.headline)
-                .padding()
-                .padding(.horizontal,10)
-                .background(.white)
-                .foregroundColor(.purple)
-               
-                .cornerRadius(10)
+            NavigationLink {
+                FinalView()
+            } label: {
+                Text(item)
+                    .font(.headline)
+                    .padding()
+                    .padding(.horizontal,10)
+                    .background(.white)
+                    .foregroundColor(.purple)
+                   
+                    .cornerRadius(10)            }
+
+            
         }
     }
 }
 struct FinalView : View {
+    @EnvironmentObject var viewModel : EnvorimentViewModel
     var body: some View {
         ZStack{
             LinearGradient(colors: [
@@ -52,9 +59,10 @@ struct FinalView : View {
             ScrollView {
                 VStack(spacing : 20
                 ){
-                    Text("Item 1")
-                    Text("Item 2")
-                    Text("Item 3")
+                    ForEach(viewModel.dataArray, id: \.self) { item in
+                        Text(item)
+                    }
+                   
                 }.foregroundColor(.white)
                     .font(.headline)
             }
@@ -62,6 +70,6 @@ struct FinalView : View {
     }
 }
 #Preview {
-//    EnviromentObjectBootCamp()
-    FinalView()
+    EnviromentObjectBootCamp()
+//    FinalView()
 }

@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct EnviromentObjectBootCamp: View {
+    @StateObject var viewModel : EnvorimentViewModel = EnvorimentViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            ForEach(viewModel.dataArray, id: \.self) { items in
+                Text(items)
+            }
+        }
     }
 }
 

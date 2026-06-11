@@ -11,8 +11,13 @@ struct EnviromentObjectBootCamp: View {
     @StateObject var viewModel : EnvorimentViewModel = EnvorimentViewModel()
     var body: some View {
         VStack{
-            ForEach(viewModel.dataArray, id: \.self) { items in
-                Text(items)
+            List {
+                ForEach(viewModel.dataArray, id: \.self) { items in
+                    NavigationLink(destination: Text("des")) {
+                        Text(items)
+
+                    }
+                }
             }
         }
     }

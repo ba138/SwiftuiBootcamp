@@ -41,7 +41,27 @@ struct DetailView : View {
         }
     }
 }
-
+struct FinalView : View {
+    var body: some View {
+        ZStack{
+            LinearGradient(colors: [
+                Color.blue,
+                Color.blue.opacity(0.5)
+            ], startPoint: .topLeading, endPoint: .bottomTrailing)
+            .ignoresSafeArea()
+            ScrollView {
+                VStack(spacing : 20
+                ){
+                    Text("Item 1")
+                    Text("Item 2")
+                    Text("Item 3")
+                }.foregroundColor(.white)
+                    .font(.headline)
+            }
+        }
+    }
+}
 #Preview {
-    EnviromentObjectBootCamp()
+//    EnviromentObjectBootCamp()
+    FinalView()
 }

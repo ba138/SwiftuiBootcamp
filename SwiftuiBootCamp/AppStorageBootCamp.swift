@@ -21,6 +21,9 @@ struct AppStorageBootCamp: View {
                 UserDefaults.standard.set(name, forKey: "Name")
             }
         }
+        .onAppear {
+            currentUserNamw = UserDefaults.standard.string(forKey: "Name")
+        }
     }
 }
 

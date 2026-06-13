@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @State var userOnboardingCount : Int = 1
+    @State var userOnboardingCount : Int = 2
     @State var nameText : String = ""
+    @State var age : Double = 50
     var body: some View {
         ZStack{
             ZStack{
@@ -18,6 +19,8 @@ struct OnboardingView: View {
                     welcomeSection
                 case 1 :
                     nameSection
+                case 2 :
+                    ageSection
                 default :
                     RoundedRectangle(cornerRadius: 25)
                         .foregroundColor(.white)
@@ -88,6 +91,26 @@ extension OnboardingView {
                 .cornerRadius(12)
             
             
+            Spacer()
+            Spacer()
+
+        }
+        .padding(20)
+    }
+    private var ageSection : some View {
+        VStack (spacing: 20){
+            Spacer()
+            Text("Select Your Age")
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+            Text("\(String(format :"%.0f",age ))")
+                .font(.title)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+            
+            Slider(value: $age, in: 18...100, step: 1)
+                .accentColor(.white)
             Spacer()
             Spacer()
 

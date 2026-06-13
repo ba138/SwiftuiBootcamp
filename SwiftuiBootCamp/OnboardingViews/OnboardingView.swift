@@ -13,22 +13,30 @@ struct OnboardingView: View {
         ZStack{
             VStack{
                 Spacer()
-                Text("SignIn")
-                    .font(.headline)
-                    .frame( height: 55,)
-                    .frame(maxWidth: .infinity)
-                    .foregroundColor(.purple)
-                    .background(.white)
-                    .cornerRadius(20)
-                    .onTapGesture {
-                        
-                    }
+                bottomButton
+                
             }
             .padding(30)
-        }    }
+        }
+    }
+   
 }
 
 #Preview {
     OnboardingView()
         .background(.purple)
+}
+extension OnboardingView {
+    private var bottomButton : some View {
+        Text("SignIn")
+            .font(.headline)
+            .frame( height: 55,)
+            .frame(maxWidth: .infinity)
+            .foregroundColor(.purple)
+            .background(.white)
+            .cornerRadius(20)
+            .onTapGesture {
+                
+            }
+    }
 }

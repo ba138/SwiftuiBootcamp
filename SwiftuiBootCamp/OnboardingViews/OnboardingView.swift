@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @State var userOnboardingCount : Int = 0
+    @State var userOnboardingCount : Int = 1
+    @State var nameText : String = ""
     var body: some View {
         ZStack{
             ZStack{
                 switch userOnboardingCount {
                 case 0 :
                     welcomeSection
+                case 1 :
+                    nameSection
                 default :
                     RoundedRectangle(cornerRadius: 25)
                         .foregroundColor(.white)
@@ -68,6 +71,27 @@ extension OnboardingView {
 
         }
         .multilineTextAlignment(.center)
+        .padding(20)
+    }
+    private var nameSection : some View {
+        VStack (spacing: 20){
+            Spacer()
+            Text("Your Name Here")
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+            TextField("Enter you Name", text: $nameText)
+                .font(.default)
+                .frame(height: 55)
+                .padding(.horizontal)
+                .background()
+                .cornerRadius(12)
+            
+            
+            Spacer()
+            Spacer()
+
+        }
         .padding(20)
     }
 }

@@ -11,6 +11,16 @@ struct OnboardingView: View {
     @State var userOnboardingCount : Int = 0
     var body: some View {
         ZStack{
+            ZStack{
+                switch userOnboardingCount {
+                case 0 :
+                    RoundedRectangle(cornerRadius: 25)
+                        .foregroundColor(.red)
+                default :
+                    RoundedRectangle(cornerRadius: 25)
+                        .foregroundColor(.white)
+                }
+            }
             VStack{
                 Spacer()
                 bottomButton

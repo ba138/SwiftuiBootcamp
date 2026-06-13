@@ -14,8 +14,7 @@ struct OnboardingView: View {
             ZStack{
                 switch userOnboardingCount {
                 case 0 :
-                    RoundedRectangle(cornerRadius: 25)
-                        .foregroundColor(.red)
+                    welcomeSection
                 default :
                     RoundedRectangle(cornerRadius: 25)
                         .foregroundColor(.white)
@@ -48,5 +47,27 @@ extension OnboardingView {
             .onTapGesture {
                 
             }
+    }
+    private var welcomeSection : some View {
+        VStack (spacing: 20){
+            Spacer()
+            Image(systemName: "heart.text.square.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200,height: 200 )
+                .foregroundColor(.white)
+            Text("Find Your Match")
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+            Text("This is the number one app for the dating in the world and we are learning the swiftui app storage and i like to learn new thinks")
+                .fontWeight(.medium)
+                .foregroundColor(.white)
+            Spacer()
+            Spacer()
+
+        }
+        .multilineTextAlignment(.center)
+        .padding(20)
     }
 }

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    let trasition : AnyTransition = .asymmetric(
+        insertion: .move(edge: .leading),
+        removal: .move(edge: .trailing))
     @State var userOnboardingCount : Int = 0
     @State var nameText : String = ""
     @State var age : Double = 50
@@ -18,12 +21,19 @@ struct OnboardingView: View {
                 switch userOnboardingCount {
                 case 0 :
                     welcomeSection
+                        .transition(trasition)
                 case 1 :
                     nameSection
+                        .transition(trasition)
+
                 case 2 :
                     ageSection
+                        .transition(trasition)
+
                 case 3 :
                     genderSection
+                        .transition(trasition)
+
                 default :
                     RoundedRectangle(cornerRadius: 25)
                         .foregroundColor(.white)

@@ -15,6 +15,8 @@ struct OnboardingView: View {
     @State var nameText : String = ""
     @State var age : Double = 50
     @State var gender : String = "Male"
+    @State var alertMessage : String = ""
+    @State var showAlert : Bool = false
     var body: some View {
         ZStack{
             ZStack{
@@ -45,6 +47,9 @@ struct OnboardingView: View {
                 
             }
             .padding(30)
+        }
+        .alert(alertMessage, isPresented: $showAlert) {
+            
         }
     }
    
@@ -164,6 +169,30 @@ extension OnboardingView {
 extension OnboardingView {
     func handleNextPress()
     {
+        switch userOnboardingCount {
+        case 1:
+            guard nameText.count >= 3 else{
+                alertMessage = "Please Enter your name"
+                showAlert.toggle()
+                return
+                
+            }
+        case 2:
+            guard age >= 18 else{
+                alertMessage = "Please select your age"
+                showAlert.toggle()
+                return
+            }
+        case 3 :
+            guard gender.count >= 3 else {
+                alertMessage = "Please select your Gender"
+                showAlert.toggle()
+                return
+            }
+        default:
+            break
+        }
+        
         if userOnboardingCount == 3{
             // Sign In Logic
         }else{

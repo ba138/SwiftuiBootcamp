@@ -172,21 +172,22 @@ extension OnboardingView {
         switch userOnboardingCount {
         case 1:
             guard nameText.count >= 3 else{
-                alertMessage = "Please Enter your name"
-                showAlert.toggle()
+                showAlertMessage(title: "Please Enter your name")
+               
                 return
                 
             }
         case 2:
             guard age >= 18 else{
-                alertMessage = "Please select your age"
-                showAlert.toggle()
+                showAlertMessage(title: "Please select your age")
+
+               
                 return
             }
         case 3 :
             guard gender.count >= 3 else {
-                alertMessage = "Please select your Gender"
-                showAlert.toggle()
+                showAlertMessage(title: "Please select your Gender")
+                
                 return
             }
         default:
@@ -199,5 +200,9 @@ extension OnboardingView {
             userOnboardingCount += 1
 
         }
+    }
+    func showAlertMessage( title : String) {
+        alertMessage = title
+        showAlert.toggle()
     }
 }

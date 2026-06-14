@@ -154,6 +154,11 @@ extension OnboardingView {
 extension OnboardingView {
     func handleNextPress()
     {
-        userOnboardingCount += 1
+        if userOnboardingCount == 3{
+            // Sign In Logic
+        }else{
+            userOnboardingCount += 1
+
+        }
     }
 }

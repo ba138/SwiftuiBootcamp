@@ -11,12 +11,18 @@ struct OnboardingView: View {
     let trasition : AnyTransition = .asymmetric(
         insertion: .move(edge: .leading),
         removal: .move(edge: .trailing))
+    // For onboarding Inputs
     @State var userOnboardingCount : Int = 0
     @State var nameText : String = ""
     @State var age : Double = 50
     @State var gender : String = "Male"
+        // For Alert
     @State var alertMessage : String = ""
     @State var showAlert : Bool = false
+    // for AppStorage
+    @AppStorage("name") var currentUserName : String?
+    @AppStorage("age") var currentUserAge : Int?
+    @AppStorage("Gender") var currentUserGender : String?
     var body: some View {
         ZStack{
             ZStack{

@@ -22,7 +22,28 @@ struct AppProfileView: View {
             Text(currentUserName ?? "unknown")
             Text("This user is \(currentUserAge ?? 0) years old")
             Text("this user \(currentUserGender ?? "Unkown")")
+            Text("sign out".uppercased())
+                .foregroundColor(.white)
+                .frame(height: 55)
+                .frame(maxWidth: .infinity)
+                .background(.black)
+                .cornerRadius(10)
+                .onTapGesture {
+                    signOut()
+                }
         }
+        .font(.title)
+        .padding()
+        .padding(.vertical,40)
+        .background(.white)
+        .cornerRadius(10)
+        .shadow(radius: 5)
+    }
+    func signOut (){
+        currentUserName = nil
+        currentUserAge = nil
+        currentUserGender = nil
+        userSignesIn = false
     }
 }
 

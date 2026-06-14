@@ -15,7 +15,7 @@ struct IntroView: View {
                            center: .topLeading, startRadius: 5, endRadius: 1000)
             .ignoresSafeArea()
             if userSignesIn{
-                Text("Proflie")
+AppProfileView()
             }else{
 OnboardingView()
             }

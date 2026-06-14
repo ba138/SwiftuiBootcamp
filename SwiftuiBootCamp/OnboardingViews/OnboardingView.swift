@@ -23,6 +23,8 @@ struct OnboardingView: View {
     @AppStorage("name") var currentUserName : String?
     @AppStorage("age") var currentUserAge : Int?
     @AppStorage("Gender") var currentUserGender : String?
+    @AppStorage("signed_in") var userSignesIn : Bool = false
+
     var body: some View {
         ZStack{
             ZStack{
@@ -201,11 +203,17 @@ extension OnboardingView {
         }
         
         if userOnboardingCount == 3{
-            // Sign In Logic
+signin()
         }else{
             userOnboardingCount += 1
 
         }
+    }
+    func signin(){
+        currentUserName = nameText
+        currentUserAge = Int(age)
+        currentUserGender = gender
+        userSignesIn = true
     }
     func showAlertMessage( title : String) {
         alertMessage = title

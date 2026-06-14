@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @State var userOnboardingCount : Int = 3
+    @State var userOnboardingCount : Int = 0
     @State var nameText : String = ""
     @State var age : Double = 50
     @State var gender : String = "Male"
@@ -46,7 +46,10 @@ struct OnboardingView: View {
 }
 extension OnboardingView {
     private var bottomButton : some View {
-        Text("SignIn")
+        Text(userOnboardingCount == 0 ? "SIGN UP" :
+                userOnboardingCount == 3 ? "Finished" :
+                "Next"
+        )
             .font(.headline)
             .frame(height: 55)
             .frame(maxWidth: .infinity)
@@ -54,7 +57,7 @@ extension OnboardingView {
             .background(.white)
             .cornerRadius(20)
             .onTapGesture {
-                
+                handleNextPress()
             }
     }
     private var welcomeSection : some View {
@@ -145,5 +148,12 @@ extension OnboardingView {
 
         }
         .padding(20)
+    }
+}
+// MARK : FUNCTIONS
+extension OnboardingView {
+    func handleNextPress()
+    {
+        userOnboardingCount += 1
     }
 }

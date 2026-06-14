@@ -17,7 +17,7 @@ struct IntroView: View {
             if userSignesIn{
                 Text("Proflie")
             }else{
-                Text("onboarding")
+OnboardingView()
             }
         }
     }

@@ -13,24 +13,8 @@ struct AsyncBootCamp: View {
      let url = URL(string: "https://picsum.photos/1024")
 
     var body: some View {
-        // Pass the optional URL directly; remove the invalid optional chaining syntax.
-        AsyncImage(url: url) { phase in
-            switch phase {
-            case .empty:
-                ProgressView()
-            case .success(let image):
-                image
-                    .resizable()
-                    .scaledToFit()
-            case .failure:
-                Image(systemName: "exclamationmark.triangle")
-                    .font(.largeTitle)
-                    .foregroundStyle(.secondary)
-            @unknown default:
-                EmptyView()
-            }
-        }
-        .padding()
+        AppAsyncImage(url: url, contentMode: .fit)
+            .padding()
     }
 }
 

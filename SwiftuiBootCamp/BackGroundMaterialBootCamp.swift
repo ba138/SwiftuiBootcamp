@@ -14,10 +14,10 @@ struct BackGroundMaterialBootCamp: View {
             VStack{
                 Text("Hi There")
             }
-            .foregroundColor(.white)
+            .foregroundColor(.black)
             .frame(height: 350)
             .frame(maxWidth: .infinity)
-            .background(.black)
+            .background(.thinMaterial)
             .cornerRadius(24)
             
         }

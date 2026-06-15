@@ -17,7 +17,7 @@ struct BackGroundMaterialBootCamp: View {
             .foregroundColor(.black)
             .frame(height: 350)
             .frame(maxWidth: .infinity)
-            .background(.thinMaterial)
+            .background(.ultraThinMaterial)
             .cornerRadius(24)
             
         }

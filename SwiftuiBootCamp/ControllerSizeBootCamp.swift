@@ -16,24 +16,31 @@ struct ControllerSizeBootCamp: View {
             .frame(height: 55)
             .frame(maxWidth: .infinity)
             .buttonStyle(.plain)
+            .controlSize(.large)
             Button("Button"){
                 
             }
             .frame(height: 55)
             .frame(maxWidth: .infinity)
             .buttonStyle(.bordered)
+            .controlSize(.extraLarge)
+
             Button("Button"){
                 
             }
             .frame(height: 55)
             .frame(maxWidth: .infinity)
             .buttonStyle(.borderedProminent)
+            .controlSize(.small)
+
             Button("Button"){
                 
             }
             .frame(height: 55)
             .frame(maxWidth: .infinity)
             .buttonStyle(.glass)
+            .controlSize(.mini)
+
         }.padding()
     }
 }

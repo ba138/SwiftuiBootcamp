@@ -10,6 +10,17 @@ import SwiftUI
 struct ControllerSizeBootCamp: View {
     var body: some View {
         VStack{
+            Button {
+                
+            } label: {
+                Text("button Title")
+                    .frame(height: 50)
+                    .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.bordered)
+            .controlSize(.large)
+
+
             Button("Button"){
                 
             }

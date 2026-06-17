@@ -16,10 +16,21 @@ struct SwiftActionBootCamp: View {
     ]
     var body: some View {
         List {
-            ForEach(fruits, id: \.self) { fruit in
-                Text(fruit)
+            ForEach(fruits, id: \.self) {
+                Text($0.capitalized)
+                    .swipeActions(edge: .trailing,
+                                  allowsFullSwipe: true
+                    ) {
+                        Button("Archive") {
+                            
+                        }
+                    }
             }
+//            .onDelete(perform: deleteData)
         }
+    }
+    func deleteData(indexSet : IndexSet){
+        
     }
 }
 

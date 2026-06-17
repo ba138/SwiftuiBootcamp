@@ -18,8 +18,23 @@ struct SwiftActionBootCamp: View {
         List {
             ForEach(fruits, id: \.self) {
                 Text($0.capitalized)
+                    .swipeActions(edge: .leading,
+                                  allowsFullSwipe: false
+                    ) {
+                        Button("Share") {
+                            
+                        }
+                        
+                        
+                        Button("Delete") {
+                            
+                        }
+                        .tint(.red)
+
+                    }
+
                     .swipeActions(edge: .trailing,
-                                  allowsFullSwipe: true
+                                  allowsFullSwipe: false
                     ) {
                         Button("Archive") {
                             
@@ -29,10 +44,7 @@ struct SwiftActionBootCamp: View {
                             
                         }
                         .tint(.green)
-                        Button("Selete") {
-                            
-                        }
-                        .tint(.red)
+                       
 
                     }
             }

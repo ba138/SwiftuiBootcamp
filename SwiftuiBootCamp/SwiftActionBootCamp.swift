@@ -24,6 +24,16 @@ struct SwiftActionBootCamp: View {
                         Button("Archive") {
                             
                         }
+                        
+                        Button("Save") {
+                            
+                        }
+                        .tint(.green)
+                        Button("Selete") {
+                            
+                        }
+                        .tint(.red)
+
                     }
             }
 //            .onDelete(perform: deleteData)

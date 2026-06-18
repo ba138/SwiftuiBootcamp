@@ -8,21 +8,25 @@
 import SwiftUI
 
 struct FocusStateBootCamp: View {
-    @FocusState private var userFocus : Bool
+    enum Field: Hashable {
+        case username
+        case password
+    }
     @State private var userName : String = ""
-    @FocusState private var passwordFocus : Bool
     @State private var password : String = ""
+    @FocusState private var fieldFocus: Field?
     var body: some View {
         VStack{
             TextField("your Name here ...", text: $userName)
-                .focused($userFocus)
+                .focused($fieldFocus, equals: .username)
                 .padding(.leading)
                 .frame(height: 55)
                 .frame(maxWidth: .infinity)
                 .background(Color.gray.brightness(0.3))
                 .cornerRadius(12)
-            TextField("your Password here ...", text: $password)
-                .focused($passwordFocus)
+            SecureField("your Password here ...", text: $password)
+                .focused($fieldFocus, equals: .password)
+
                 .padding(.leading)
                 .frame(height: 55)
                 .frame(maxWidth: .infinity)
@@ -36,12 +40,10 @@ struct FocusStateBootCamp: View {
                     print("Is login")
                 }
                 else if (isNameValid){
-                    userFocus = false
-                    passwordFocus = true
+                    fieldFocus = .password
                 }
-                else{
-                    userFocus = true
-                    passwordFocus = false
+                else {
+                    fieldFocus = .username
                 }
             } label: {
                 Text("Log In")
@@ -60,3 +62,4 @@ struct FocusStateBootCamp: View {
 #Preview {
     FocusStateBootCamp()
 }
+

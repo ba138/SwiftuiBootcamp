@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftuiBootCampApp: App {
     var body: some Scene {
         WindowGroup {
-            IntroView()
+            FocusStateBootCamp()
         }
     }
 }

@@ -10,20 +10,24 @@ import SwiftUI
 struct NavigationStackBootCamp: View {
     var body: some View {
         NavigationStack{
-            VStack(spacing : 30) {
-                ForEach(0..<10) { value in
-                    NavigationLink(value: value) {
-                        Text("Click Me : \(value)")
+            ScrollView {
+                VStack(spacing : 30) {
+                    ForEach(0..<10) { value in
+                        NavigationLink(value: value) {
+                            Text("Click Me : \(value)")
+                        }
                     }
-                }
-                
-                
-                .navigationTitle("Navigation stack Boot Camp")
-                .navigationDestination(for: Int.self) { value in
-                    ScreenTwo(value: value)
+                    
+                    
+                    
                 }
             }
+            .navigationTitle("Navigation stack Boot Camp")
+            .navigationDestination(for: Int.self) { value in
+                ScreenTwo(value: value)
+            }
         }
+        
     }
 }
 struct ScreenTwo : View {

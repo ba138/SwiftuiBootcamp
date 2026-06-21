@@ -15,7 +15,9 @@ struct ResizeableSheetBootCamp: View {
         }
         .sheet(isPresented: $showSheet) {
             ResizeScreen()
-                .presentationDetents([.medium])
+//                .presentationDetents([.medium])
+                .presentationDragIndicator(.visible)
+                .presentationDetents([.fraction(0.7)])
         }
     }
 }

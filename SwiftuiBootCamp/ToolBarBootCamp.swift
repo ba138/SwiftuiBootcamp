@@ -16,7 +16,14 @@ struct ToolBarBootCamp: View {
                     .foregroundColor(.white)
             }
             .navigationTitle(Text("Tool Bar"))
-            .navigationBarItems(leading: Image(systemName: "heart.fill"), trailing: Image(systemName: "gear"))
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Image(systemName: "heart.fill")
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Image(systemName: "gear")
+                }
+            }
         }
     }
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AnimationUpdatedBootCamp: View {
     @State private var animation1 : Bool = false
+    @State private var animation2 : Bool = false
+
     var body: some View {
         ZStack{
             VStack{
@@ -17,14 +19,17 @@ struct AnimationUpdatedBootCamp: View {
                     
                 }
                 Button("Button2") {
-                    
+                    animation2.toggle()
                 }
                             ZStack{
                                 Rectangle()
                                     .frame(width: 120,height: 120)
                                     .frame(maxWidth: .infinity,alignment:animation1 ? .leading : .trailing)
                                     .background(.green)
+                                    .frame(maxHeight: .infinity,alignment:animation2 ? .top : .bottom)
+                                    .background(.yellow)
                             }
+                
                             .frame(maxWidth: .infinity,maxHeight: .infinity)
                             .background(.red)
             }
@@ -37,7 +42,9 @@ struct AnimationUpdatedBootCamp: View {
 //            .background(.red)
             
         }
-        .animation(.spring)
+        .animation(.spring,value: animation1)
+        .animation(.linear(duration: 5),value: animation2)
+
     }
 }
 

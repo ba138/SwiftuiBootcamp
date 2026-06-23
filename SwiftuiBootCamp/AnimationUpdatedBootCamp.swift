@@ -43,7 +43,7 @@ struct AnimationUpdatedBootCamp: View {
             
         }
         .animation(.spring,value: animation1)
-        .animation(.linear(duration: 5),value: animation2)
+        .animation(.linear(duration: 3),value: animation2)
 
     }
 }

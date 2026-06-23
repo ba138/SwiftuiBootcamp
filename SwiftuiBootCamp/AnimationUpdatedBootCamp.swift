@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct AnimationUpdatedBootCamp: View {
+    @State private var animation1 : Bool = false
     var body: some View {
         ZStack{
             VStack{
                 Button("Button1") {
+                    animation1.toggle()
                     
                 }
                 Button("Button2") {
@@ -20,6 +22,8 @@ struct AnimationUpdatedBootCamp: View {
                             ZStack{
                                 Rectangle()
                                     .frame(width: 120,height: 120)
+                                    .frame(maxWidth: .infinity,alignment:animation1 ? .leading : .trailing)
+                                    .background(.green)
                             }
                             .frame(maxWidth: .infinity,maxHeight: .infinity)
                             .background(.red)
@@ -33,6 +37,7 @@ struct AnimationUpdatedBootCamp: View {
 //            .background(.red)
             
         }
+        .animation(.spring)
     }
 }
 

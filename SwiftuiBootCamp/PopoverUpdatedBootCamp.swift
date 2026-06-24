@@ -17,6 +17,7 @@ struct PopoverUpdatedBootCamp: View {
             }
             .popover(isPresented: $showSheet) {
                 Text("Hi there this is popover")
+                    .presentationCompactAdaptation(.sheet)
             }
         }
     }

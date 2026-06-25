@@ -15,10 +15,17 @@ struct PopoverUpdatedBootCamp: View {
             ){
                 showSheet.toggle()
             }
-            .popover(isPresented: $showSheet) {
+            .popover(isPresented: $showSheet,
+                     attachmentAnchor: .point(.center),
+                     content: {
                 Text("Hi there this is popover")
                     .presentationCompactAdaptation(.sheet)
-            }
+
+            })
+//            .popover(isPresented: $showSheet) {
+//                Text("Hi there this is popover")
+//                    .presentationCompactAdaptation(.sheet)
+//            }
         }
     }
 }

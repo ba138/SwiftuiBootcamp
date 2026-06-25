@@ -9,6 +9,11 @@ import SwiftUI
 
 struct PopoverUpdatedBootCamp: View {
     @State private var showSheet : Bool = false
+    @State private var options : [String] = [
+        "Happy there",
+        "Sad there",
+        "Angery there"
+    ]
     var body: some View {
         ZStack{
             Button("Click Here"
@@ -16,10 +21,23 @@ struct PopoverUpdatedBootCamp: View {
                 showSheet.toggle()
             }
             .popover(isPresented: $showSheet,
-                     attachmentAnchor: .point(.bottomLeading),
+                     attachmentAnchor: .point(.top),
                      content: {
-                Text("Hi there this is popover")
-                    .presentationCompactAdaptation(.popover)
+                ForEach(options,id: \.self ,content: { mood in
+                    VStack(spacing : 20){
+                        Button {
+                            
+                        } label: {
+                            Text(mood)
+                        }
+                        if mood != options.last{
+                            Divider()
+
+                        }                    }
+                })
+                
+                .presentationCompactAdaptation(.popover)
+                .padding(20)
 
             })
 //            .popover(isPresented: $showSheet) {

@@ -18,6 +18,18 @@ struct ExampleCommit: View {
                 .font(.system(size: 24))
                 .bold()
             TextField("Please Enter your email".capitalized, text: $email)
+                .frame(width: .infinity,height: 55)
+                .padding(10)
+                .foregroundColor(.white)
+                .background(Color.gray.opacity(0.3).cornerRadius(12))
+                .padding(10)
+            SecureField("Please Enter your Password".capitalized, text: $password)
+                .frame(width: .infinity,height: 55)
+                .padding(10)
+                .foregroundColor(.white)
+                .background(Color.gray.opacity(0.3).cornerRadius(12))
+                .padding(10)
+
         }
     }
 }

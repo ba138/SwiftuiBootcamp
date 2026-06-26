@@ -10,7 +10,7 @@ import SwiftUI
 struct PopoverUpdatedBootCamp: View {
     @State private var showSheet : Bool = false
     @State private var options : [String] = [
-        "Happy there",
+        "Happy there ",
         "Sad there",
         "Angery there"
     ]

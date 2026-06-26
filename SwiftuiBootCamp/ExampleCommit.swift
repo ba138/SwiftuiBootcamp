@@ -29,6 +29,18 @@ struct ExampleCommit: View {
                 .foregroundColor(.white)
                 .background(Color.gray.opacity(0.3).cornerRadius(12))
                 .padding(10)
+            Button {
+                
+            } label: {
+                Text("Login")
+                    .font(.system(size: 18))
+                    .bold()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 55)
+                    .background(Color.green.cornerRadius(12))
+                    .padding()
+            }
+
 
         }
     }

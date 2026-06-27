@@ -15,20 +15,16 @@ struct AnyLayoutBootCamp: View {
         VStack(spacing: 20) {
             Text("Horizontal : \(horizontalSizeClass.debugDescription)")
             Text("Vertical : \(verticalSizeClass.debugDescription)")
-            if horizontalSizeClass == .compact  {
+            let layout : AnyLayout = horizontalSizeClass == .compact ? AnyLayout(VStackLayout()) : AnyLayout(HStackLayout())
+            layout {
                 VStack{
                     Text("Alpha")
                     Text("Gema")
                     Text("Beta")
 
                 }
-                }else{
-                    HStack{
-                        Text("Alpha")
-                        Text("Gema")
-                        Text("Beta")
-
-                    }
+            
+           
             }
         }
     }
